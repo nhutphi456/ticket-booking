@@ -1,23 +1,30 @@
-import { lazy, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import LoginModal from "../modals/login";
+import { Link } from "react-router-dom";
+import { useAppSelector } from "../../redux/hooks";
+import HeaderAfterLogin from "./header-after-login";
+import HeaderBeforeLogin from "./header-before-login";
 import * as Styled from "./styled";
 
-// const LoginModal = lazy(() => import('../modals/login'))
 const Header = () => {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const { logout } = useAuth();
-  const handleCloseLoginModal = () => {
-    setIsLoginOpen(false);
-  };
+  const {
+    auth: { isAuthenticated },
+  } = useAppSelector((state) => state);
+
   return (
-    <Styled.HeaderContainter>
-      <Styled.LoginButton onClick={() => setIsLoginOpen(true)}>
-        Login
-      </Styled.LoginButton>
-      <Styled.LoginButton onClick={() => logout()}>Logout</Styled.LoginButton>
-      <LoginModal isOpen={isLoginOpen} onCancel={handleCloseLoginModal} />
-    </Styled.HeaderContainter>
+    <Styled.Header>
+      <div className="header-container">
+        <div className="header-wrapper">
+          <div className="logo-container">
+            <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
+          </div>
+          <div className="header-right">
+            <div className="header-buttons">
+              <Link to="/test">to test</Link>
+              {isAuthenticated ? <HeaderAfterLogin /> : <HeaderBeforeLogin />}
+            </div>
+          </div>
+        </div>
+      </div>
+    </Styled.Header>
   );
 };
 

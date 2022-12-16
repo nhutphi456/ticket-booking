@@ -1,17 +1,27 @@
-import { lazy } from "react";
 import {
   createBrowserRouter,
+  createRoutesFromElements,
+  Route,
   RouterProvider,
 } from "react-router-dom";
+import Home from "./pages/home";
+import LoginPage from "./pages/login";
+import RequireAuth from "./pages/requireAuth";
+import RootLayout from "./pages/root";
+import TestPage from "./pages/test";
 
-const Home = lazy(() => import('./pages/home'))
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="/login" element={<LoginPage />} />
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
+      <Route element={<RequireAuth />}>
+        <Route path="/test" element={<TestPage />} />
+      </Route>
+    </Route>
+  )
+);
 
 function App() {
   return <RouterProvider router={router} />;

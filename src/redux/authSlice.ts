@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { ILoginUser } from "../models/user";
 import { authApi } from "../services/auth";
+import { login } from "./action/auth";
 
 interface AuthState {
   loading: boolean;
@@ -16,7 +17,8 @@ const initialState: AuthState = {
 
 export const loginAction = createAsyncThunk(
   "auth/login",
-  async (params: ILoginUser) => await authApi.login(params)
+  async (params: ILoginUser, { rejectWithValue }) =>
+    await login(params, { rejectWithValue })
 );
 
 const authSlice = createSlice({
@@ -25,6 +27,11 @@ const authSlice = createSlice({
   reducers: {
     logoutAction: () => {
       return initialState;
+    },
+    syncLogin: (state, action) => {
+      state.loading = false;
+      state.isAuthenticated = true;
+      state.user = action.payload;
     },
   },
   extraReducers: {
@@ -44,6 +51,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { logoutAction } = authSlice.actions;
+export const { logoutAction, syncLogin } = authSlice.actions;
 
 export default authSlice.reducer;
