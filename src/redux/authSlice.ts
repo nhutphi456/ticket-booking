@@ -7,12 +7,14 @@ interface AuthState {
   loading: boolean;
   isAuthenticated: boolean;
   user: any;
+  errorMessage: string;
 }
 
 const initialState: AuthState = {
   loading: false,
   isAuthenticated: false,
   user: null,
+  errorMessage: "",
 };
 
 export const loginAction = createAsyncThunk(
@@ -43,10 +45,11 @@ const authSlice = createSlice({
       state.isAuthenticated = true;
       state.user = action.payload.data;
     },
-    [loginAction.rejected.type]: (state) => {
+    [loginAction.rejected.type]: (state, action) => {
       state.loading = false;
       state.isAuthenticated = false;
       state.user = null;
+      state.errorMessage = action.payload.response.data;
     },
   },
 });

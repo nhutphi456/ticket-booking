@@ -1,9 +1,26 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/form/login";
+import AccountLayout from "../layouts/account-layout";
+import { useAppSelector } from "../redux/hooks";
 
 const LoginPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
-}
+  const {
+    auth: { isAuthenticated },
+  } = useAppSelector((state) => state);
+  const navigate = useNavigate();
 
-export default LoginPage
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated]);
+  
+  return (
+    <AccountLayout>
+      <LoginForm />
+    </AccountLayout>
+  );
+};
+
+export default LoginPage;

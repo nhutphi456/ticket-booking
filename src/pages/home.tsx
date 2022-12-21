@@ -1,7 +1,6 @@
-import { lazy } from "react";
 import withAuthSync from "../components/authentication/withAuthSync";
-const MainLayout = lazy(() => import("../layouts/main"));
-const Banner = lazy(() => import("../components/banner"));
+import Banner from "../components/banner";
+import MainLayout from "../layouts/main";
 
 const Home = () => {
   return (

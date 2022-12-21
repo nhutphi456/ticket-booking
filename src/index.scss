@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: #001232;
+  box-sizing: border-box;
+  font-family: 'Roboto';
 }
 
 code {
@@ -14,6 +21,7 @@ code {
   background-image: linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%);
   color: #fff;
   border: none;
+
   &:hover {
     color: #fff !important;
     box-shadow: 0px 10px 15px 0px rgb(59 55 188 / 50%);

@@ -1,17 +1,14 @@
-import React, {useState} from "react";
 import { Button } from "antd";
-import LoginModal from "../modals/login";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeaderBeforeLogin = () => {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const handleCloseLoginModal = () => {
-    setIsLoginOpen(false);
-  };
+  const navigate = useNavigate();
+
   return (
     <React.Fragment>
-      <Button onClick={() => setIsLoginOpen(true)}>Login</Button>
+      <Button onClick={() => navigate("/login")}>Login</Button>
       <Button>Join us</Button>
-      <LoginModal isOpen={isLoginOpen} onCancel={handleCloseLoginModal} />
     </React.Fragment>
   );
 };
