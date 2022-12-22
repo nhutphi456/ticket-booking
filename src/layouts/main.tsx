@@ -8,7 +8,7 @@ const MainLayout = ({ children }: Props) => {
   return (
     <React.Fragment>
       <Header />
-      <div style={{ paddingTop: "88px" }}>{children}</div>
+      <main style={{ paddingTop: "88px" }}>{children}</main>
     </React.Fragment>
   );
 };

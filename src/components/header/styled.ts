@@ -8,15 +8,17 @@ const Header = styled.div`
   width: 100%;
   padding: 21px 0;
   backgroundcolor: "#fff";
-  z-index: 1;
+  z-index: 99;
   border-bottom: 1px solid rgba(255, 255, 255, 0.102);
-  .header-container {
-    width: 80%;
-    margin: auto;
-    .header-wrapper {
-      display: flex;
-      justify-content: space-between;F
-    }
+  &.header-active {
+    background: #0a1e5e;
+    border: none;
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+  }
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;F
   }
   .header-buttons {
     display: flex;
@@ -30,6 +32,17 @@ const Header = styled.div`
     }
     .welcome-text {
       color: #fff;
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 `;

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import HeaderAfterLogin from "./header-after-login";
@@ -8,10 +9,29 @@ const Header = () => {
   const {
     auth: { isAuthenticated },
   } = useAppSelector((state) => state);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const handler = () => {
+      if (
+        document.body.scrollTop > 0 ||
+        document.documentElement.scrollTop > 0
+      ) {
+        setIsActive(true);
+      } else {
+        setIsActive(false);
+      }
+    };
+    window.addEventListener("scroll", handler);
+
+    return () => {
+      window.removeEventListener("scroll", handler);
+    };
+  }, []);
 
   return (
-    <Styled.Header>
-      <div className="header-container">
+    <Styled.Header className={isActive ? "header-active" : ""}>
+      <div className="container">
         <div className="header-wrapper">
           <div className="logo-container">
             <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
