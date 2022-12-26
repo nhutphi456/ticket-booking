@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomeBanner = styled.div`
-  padding: 180px 0 316px;
+  padding: 160px 0 270px;
   .banner-bg {
     background-image: url("/images/banner.jpg");
     min-height: 100vh;
