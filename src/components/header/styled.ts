@@ -6,7 +6,7 @@ const Header = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 21px 0;
+  padding: 15px 0;
   backgroundcolor: "#fff";
   z-index: 99;
   border-bottom: 1px solid rgba(255, 255, 255, 0.102);

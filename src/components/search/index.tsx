@@ -16,35 +16,37 @@ const SearchTab = () => {
               showSearch
               placeholder="Search for movie"
             />
-            <div className="search-group">
-              <div className="thumb">
-                <img
-                  src={process.env.PUBLIC_URL + "/images/toolbar-city.png"}
-                  alt="city-logo"
-                />
+            <div className="search-groups">
+              <div className="search-group">
+                <div className="thumb">
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/toolbar-city.png"}
+                    alt="city-logo"
+                  />
+                </div>
+                <span className="title">Theater</span>
+                <Styled.GroupSelect placeholder="Theater" />
               </div>
-              <span className="title">Theater</span>
-              <Styled.GroupSelect placeholder="Theater" />
-            </div>
-            <div className="search-group">
-              <div className="thumb">
-                <img
-                  src={process.env.PUBLIC_URL + "/images/toolbar-date.png"}
-                  alt="date-logo"
-                />
+              <div className="search-group">
+                <div className="thumb">
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/toolbar-date.png"}
+                    alt="date-logo"
+                  />
+                </div>
+                <span className="title">Date</span>
+                <Styled.GroupSelect placeholder="Date" />
               </div>
-              <span className="title">Date</span>
-              <Styled.GroupSelect placeholder="Date" />
-            </div>
-            <div className="search-group">
-              <div className="thumb">
-                <img
-                  src={process.env.PUBLIC_URL + "/images/toolbar-cinema.png"}
-                  alt="cinema-logo"
-                />
+              <div className="search-group">
+                <div className="thumb">
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/toolbar-cinema.png"}
+                    alt="cinema-logo"
+                  />
+                </div>
+                <span className="title">Premiere</span>
+                <Styled.GroupSelect placeholder="Cinema" />
               </div>
-              <span className="title">Premiere</span>
-              <Styled.GroupSelect placeholder="Cinema" />
             </div>
           </div>
           <div className="btn-container">

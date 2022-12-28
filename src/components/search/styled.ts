@@ -61,15 +61,20 @@ const Search = styled.div`
     margin-top: 10px;
     text-align: right;
   }
+  .search-groups {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+  }
   .search-group {
+    flex: 1;
     position: relative;
     display: flex;
     align-items: center;
-    width: calc((100% - 270px) / 3);
     .thumb {
       display: flex;
       align-items: center;
-      margin-bottom: 5px;
       img {
         margin-right: 10px;
       }
@@ -81,7 +86,7 @@ const Search = styled.div`
 `;
 const MovieSelect = styled(Select)`
   &.search-movie {
-    width: 270px;
+    width: 30%;
   }
   .ant-select-selector {
     padding: 0 !important;
