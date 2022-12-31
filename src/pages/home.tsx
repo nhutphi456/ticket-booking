@@ -2,6 +2,7 @@ import withAuthSync from "../components/authentication/withAuthSync";
 import Banner from "../components/banner";
 import MovieList from "../components/movie";
 import SearchTab from "../components/search";
+import ShowTime from "../components/tabs/show-time";
 import MainLayout from "../layouts/main";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <Banner />
       <SearchTab />
       <MovieList />
+      <ShowTime />
       {/* <iframe
         width="560"
         height="315"
