@@ -44,7 +44,7 @@ const useShowTime = () => {
             const promise = theaterApi
               .getShowtime({
                 maHeThongRap: theater.maHeThongRap,
-                maNhom: "GP03",
+                maNhom: "GP09",
               })
               .then((res: AxiosResponse) => {
                 theater.lichChieu = res.data;

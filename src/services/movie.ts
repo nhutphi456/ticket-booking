@@ -5,7 +5,7 @@ const movieApi = {
   getList: () => {
     return httpClient.get(`${URL}/LayDanhSachPhim`, {
       params: {
-        maNhom: "GP03",
+        maNhom: "GP09",
       },
     });
   },

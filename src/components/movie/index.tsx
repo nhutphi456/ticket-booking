@@ -39,13 +39,13 @@ const MovieList = () => {
   return (
     <Styled.MovieList className="container">
       <Carousel draggable arrows {...settings}>
-        {_.chunk(data, 8).map((m) => {
+        {_.chunk(data, 8).map((m, idx) => {
           return (
-            <div className="movie-slide">
+            <div className="movie-slide" key={idx}>
               <Row gutter={[40, 40]}>
-                {m.map((movie) => {
+                {m.map((movie, index) => {
                   return (
-                    <Col span={6}>
+                    <Col span={6} key={index}>
                       <MovieItem movie={movie} />
                     </Col>
                   );
