@@ -28,7 +28,7 @@ const MovieShowTimeItem = ({ film }: any) => {
             </div>
             <div className="show-time-buttons">
               {s.lichChieuTheoNgay.map((lc: any, idx: number) => (
-                <ShowTimeButton time={lc.ngayChieuGioChieu} key={idx} />
+                <ShowTimeButton showTime={lc} key={idx} />
               ))}
             </div>
           </div>

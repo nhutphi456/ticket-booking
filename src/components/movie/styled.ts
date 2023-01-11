@@ -117,3 +117,12 @@ export const MovieItem = styled.div`
     }
   }
 `;
+
+export const MovieThumb = styled.div<{ image: string }>`
+  background-image: url(${(props) => props.image});
+  padding-top: 147.9%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s;
+`;

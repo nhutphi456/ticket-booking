@@ -45,7 +45,7 @@ const MovieList = () => {
               <Row gutter={[40, 40]}>
                 {m.map((movie, index) => {
                   return (
-                    <Col span={6} key={index}>
+                    <Col key={index} span={6}>
                       <MovieItem movie={movie} />
                     </Col>
                   );

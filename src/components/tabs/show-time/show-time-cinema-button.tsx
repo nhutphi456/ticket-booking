@@ -3,15 +3,21 @@ import React from "react";
 import * as Styled from "./styled";
 
 interface Props {
-  time: string;
+  showTime: any;
 }
-const ShowTimeButton = ({ time }: Props) => {
+const ShowTimeButton = ({ showTime }: Props) => {
+  const { ngayChieuGioChieu, maLichChieu } = showTime;
+  const onSelectShowTime = () => {
+    console.log(maLichChieu);
+  };
   return (
-    <Styled.ShowTimeButton>
-      <span className="start-time">{moment(time).format("HH:mm")}</span>
+    <Styled.ShowTimeButton onClick={onSelectShowTime}>
+      <span className="start-time">
+        {moment(ngayChieuGioChieu).format("HH:mm")}
+      </span>
       <span className="end-time">
         {" "}
-        ~ {moment(time).add(120, "minutes").format("HH:mm")}
+        ~ {moment(ngayChieuGioChieu).add(120, "minutes").format("HH:mm")}
       </span>
     </Styled.ShowTimeButton>
   );

@@ -10,7 +10,7 @@ const MovieItem = ({ movie }: Props) => {
   const { tenPhim, hinhAnh, biDanh, trailer, danhGia } = movie;
   return (
     <Styled.MovieItem>
-      <div className="movie-thumb">
+      <Styled.MovieThumb className="movie-thumb" image={hinhAnh}>
         <div className="overlay">
           <div className="icon-container">
             <a href={trailer} target="_blank">
@@ -18,8 +18,8 @@ const MovieItem = ({ movie }: Props) => {
             </a>
           </div>
         </div>
-        <img src={hinhAnh} alt={biDanh} />
-      </div>
+        {/* <img src={hinhAnh} alt={biDanh} /> */}
+      </Styled.MovieThumb>
       <div className="movie-content">
         <h5>
           <a href="#">{tenPhim}</a>

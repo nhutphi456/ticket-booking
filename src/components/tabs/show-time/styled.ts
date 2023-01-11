@@ -198,7 +198,6 @@ export const ShowTimeButton = styled(Button)`
   font-size: 14px;
   font-weight: 500;
   background: none;
-  // background-color: #f6f6f6;
   background-color: transparent;
   color: #9b9b9b;
   border-radius: 7px;
@@ -207,13 +206,13 @@ export const ShowTimeButton = styled(Button)`
   display: flex;
   align-items: center;
   .start-time {
-    // color: #001232;
     color: #5b05b4;
-    font-size: 16px;
+    font-size: 17px;
     transition: all 0.5s;
   }
   &:hover {
     color: #9b9b9b !important;
+    border-color: #e4e4e4 !important;
     .start-time {
       color: #dc496a;
     }
