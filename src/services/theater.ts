@@ -16,6 +16,13 @@ const theaterApi = {
   getShowtime: (params: IShowtimeParams) => {
     return httpClient.get(`${URL}/LayThongTinLichChieuHeThongRap`, { params });
   },
+  getDetail: (id: number) => {
+    return httpClient.get(`${URL}/LayThongTinLichChieuPhim`, {
+      params: {
+        maPhim: id,
+      },
+    });
+  },
 };
 
 export { theaterApi };

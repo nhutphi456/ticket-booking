@@ -41,9 +41,9 @@ const Search = styled.div`
     padding: 30px;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
     &:before {
       background-color: #000;
       content: "";
@@ -63,12 +63,15 @@ const Search = styled.div`
   }
   .search-groups {
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
+    margin-top: 20px;
   }
   .search-group {
     flex: 1;
+    width: 33.3333%;
     position: relative;
     display: flex;
     align-items: center;
@@ -82,11 +85,22 @@ const Search = styled.div`
     .title {
       color: #31d7a9;
     }
+    .ant-select-selection-item {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 `;
 const MovieSelect = styled(Select)`
   &.search-movie {
-    width: 30%;
+    width: 32.75%;
+    .ant-select-selection-item {
+      line-height: 41px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
   .ant-select-selector {
     padding: 0 !important;
@@ -120,12 +134,18 @@ const MovieSelect = styled(Select)`
 `;
 
 const GroupSelect = styled(Select)`
+  width: 70%;
   .ant-select-selector {
     background: transparent !important;
     border: none !important;
     border-radius: 0;
     .ant-select-selection-placeholder {
       color: #4c588f;
+    }
+  }
+  &.ant-select-open {
+    .ant-select-selection-item {
+      color: #fff;
     }
   }
   &.ant-select-focused {
@@ -135,6 +155,11 @@ const GroupSelect = styled(Select)`
   }
   .ant-select-arrow {
     color: #90a5e8;
+  }
+  .ant-select-selection-item {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
   }
 `;
 

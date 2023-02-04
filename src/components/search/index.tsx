@@ -1,7 +1,30 @@
 import { Button } from "antd";
+import moment from "moment";
+import { useEffect, useMemo, useState } from "react";
+import useSearch from "../../hooks/useSearch";
+import { useAppSelector } from "../../redux/hooks";
 import * as Styled from "./styled";
 
 const SearchTab = () => {
+  const {
+    movieOptions,
+    theaterOptions,
+    dateOptions,
+    premiereOptions,
+    selectedMovieId,
+    selectedTheater,
+    selectedDate,
+    selectedPremiere,
+    handleMovieChange,
+    handleTheaterChange,
+    handleDateChange,
+    handlePremiereChange,
+  } = useSearch();
+
+  const onFinish = (val: string) => {
+    console.log(val);
+  };
+
   return (
     <Styled.Search>
       <div className="container">
@@ -15,6 +38,17 @@ const SearchTab = () => {
               className="search-movie"
               showSearch
               placeholder="Search for movie"
+              options={movieOptions}
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                (option?.label ?? "").toLowerCase().includes(input)
+              }
+              filterSort={(optionA, optionB) =>
+                (optionA?.label ?? "")
+                  .toLowerCase()
+                  .localeCompare((optionB?.label ?? "").toLowerCase())
+              }
+              onChange={(val: any) => handleMovieChange(val)}
             />
             <div className="search-groups">
               <div className="search-group">
@@ -25,7 +59,12 @@ const SearchTab = () => {
                   />
                 </div>
                 <span className="title">Theater</span>
-                <Styled.GroupSelect placeholder="Theater" />
+                <Styled.GroupSelect
+                  placeholder="Theater"
+                  options={theaterOptions}
+                  value={selectedTheater}
+                  onSelect={(val: any) => handleTheaterChange(val)}
+                />
               </div>
               <div className="search-group">
                 <div className="thumb">
@@ -35,7 +74,12 @@ const SearchTab = () => {
                   />
                 </div>
                 <span className="title">Date</span>
-                <Styled.GroupSelect placeholder="Date" />
+                <Styled.GroupSelect
+                  placeholder="Date"
+                  options={dateOptions}
+                  value={selectedDate}
+                  onChange={(val: any) => handleDateChange(val)}
+                />
               </div>
               <div className="search-group">
                 <div className="thumb">
@@ -45,12 +89,22 @@ const SearchTab = () => {
                   />
                 </div>
                 <span className="title">Premiere</span>
-                <Styled.GroupSelect placeholder="Cinema" />
+                <Styled.GroupSelect
+                  placeholder="Cinema"
+                  options={premiereOptions}
+                  value={selectedPremiere}
+                  onChange={(val: any) => handlePremiereChange(val)}
+                />
               </div>
             </div>
           </div>
           <div className="btn-container">
-            <Button>Buy Ticket Now</Button>
+            <Button
+              disabled={!selectedPremiere}
+              onClick={() => onFinish(selectedPremiere)}
+            >
+              Buy Ticket Now
+            </Button>
           </div>
         </div>
       </div>
