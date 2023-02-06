@@ -1,4 +1,5 @@
 import React from "react";
+import useMobile from "../../../hooks/useMobile";
 import { ICinemaComplex, IShowTime } from "../../../models/theater";
 import MovieShowTimeItem from "./show-time-cinema-tab-item";
 import CinemaLabel from "./show-time-cinema-tab-label";
@@ -10,6 +11,7 @@ interface Props {
   lichChieu: IShowTime[];
 }
 const CinemaTabs = ({ cumRap, maHeThongRap, lichChieu }: Props) => {
+  const isMobile = useMobile()
   return (
     <Styled.CinemaTabs
       defaultActiveKey="1"
@@ -29,7 +31,7 @@ const CinemaTabs = ({ cumRap, maHeThongRap, lichChieu }: Props) => {
           }),
         };
       })}
-      tabPosition="left"
+      tabPosition={!isMobile ? "left" : "top"}
     />
   );
 };

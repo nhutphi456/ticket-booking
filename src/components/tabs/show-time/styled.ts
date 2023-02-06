@@ -58,11 +58,13 @@ export const TheaterTabs = styled(Tabs)`
   }
 `;
 export const CinemaTabs = styled(Tabs)`
-  // width: 40%;
   max-height: 705px;
   // overflow: hidden scroll;
   .ant-tabs-nav {
     width: 40%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   .ant-tabs-tab {
     margin: 0 !important;

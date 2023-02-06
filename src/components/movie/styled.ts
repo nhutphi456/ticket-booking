@@ -35,6 +35,10 @@ export const MovieList = styled.div`
   .slick-dots-bottom {
     bottom: -30px;
   }
+
+  @media (max-width: 768px) {
+    padding: 30px 0px;
+  }
 `;
 export const MovieItem = styled.div`
   border-radius: 7px 7px 5px 5px;
@@ -113,6 +117,21 @@ export const MovieItem = styled.div`
           font-weight: 600;
           color: #fff;
         }
+      }
+
+      @media (max-width: 768px) {
+        padding: 10px 0;
+        .rating-item {
+          font-size: 12px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 10px;
+      h5 {
+        padding: 10px 0;
+        font-size: 12px;
       }
     }
   }

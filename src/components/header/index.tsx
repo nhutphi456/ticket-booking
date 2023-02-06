@@ -12,7 +12,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const handler = () => {
+    const handleHeaderScroll = () => {
       if (
         document.body.scrollTop > 0 ||
         document.documentElement.scrollTop > 0
@@ -22,10 +22,10 @@ const Header = () => {
         setIsActive(false);
       }
     };
-    window.addEventListener("scroll", handler);
+    window.addEventListener("scroll", handleHeaderScroll);
 
     return () => {
-      window.removeEventListener("scroll", handler);
+      window.removeEventListener("scroll", handleHeaderScroll);
     };
   }, []);
 
@@ -38,7 +38,7 @@ const Header = () => {
           </div>
           <div className="header-right">
             <div className="header-buttons">
-              <Link to="/test">to test</Link>
+              {/* <Link to="/test">to test</Link> */}
               {isAuthenticated ? <HeaderAfterLogin /> : <HeaderBeforeLogin />}
             </div>
           </div>

@@ -24,15 +24,29 @@ const Search = styled.div`
       height: auto;
       z-index: -1;
     }
+
+    @media (max-width: 768px) {
+      padding: 20px 15px;
+    }
+    @media (max-width: 480px) {
+      padding: 15px 10px;
+    }
   }
   .search-tab-title {
     p:first-child {
       color: #31d7a9;
       font-weight: 600;
       margin-bottom: 16px;
+      @media (max-width: 768px) {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
     }
     p:last-child {
       font-size: 28px;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
     }
   }
   .search-tab-area {
@@ -41,9 +55,6 @@ const Search = styled.div`
     padding: 30px;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
     &:before {
       background-color: #000;
       content: "";
@@ -55,11 +66,23 @@ const Search = styled.div`
       height: calc(100% + 1px);
       z-index: -1;
     }
+    @media (max-width: 768px) {
+      margin-top: 15px;
+      padding: 15px;
+    }
   }
   .btn-container {
     width: 100%;
     margin-top: 10px;
     text-align: right;
+    button {
+      @media (max-width: 480px) {
+        width: 100%;
+        padding: 12px;
+        height: auto;
+        border-radius: 0;
+      }
+    }
   }
   .search-groups {
     display: flex;
@@ -68,6 +91,9 @@ const Search = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
   .search-group {
     flex: 1;
@@ -80,16 +106,33 @@ const Search = styled.div`
       align-items: center;
       img {
         margin-right: 10px;
+        @media (max-width: 480px) {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
     .title {
       color: #31d7a9;
+      @media (max-width: 480px) {
+        font-size: 12px;
+      }
     }
     .ant-select-selection-item {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 10px;
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 0px;
   }
 `;
 const MovieSelect = styled(Select)`
@@ -100,6 +143,9 @@ const MovieSelect = styled(Select)`
       color: #fff;
       font-size: 16px;
       font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
   .ant-select-selector {
@@ -160,6 +206,13 @@ const GroupSelect = styled(Select)`
     color: #fff;
     font-size: 16px;
     font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    .ant-select-selector {
+      padding: 0!important;
+    }
   }
 `;
 

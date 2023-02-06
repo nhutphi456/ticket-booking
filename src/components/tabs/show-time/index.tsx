@@ -4,9 +4,11 @@ import { Tabs } from "antd";
 import CinemaTabs from "./show-time-cinema-tab";
 import * as Styled from "./styled";
 import { ITheater } from "../../../models/theater";
+import useMobile from "../../../hooks/useMobile";
 
 const ShowTime = () => {
   const { theaters } = useShowTime();
+  const isMobile = useMobile();
 
   return (
     <div className="container">
@@ -30,7 +32,7 @@ const ShowTime = () => {
               ),
             };
           })}
-          tabPosition="left"
+          tabPosition={!isMobile ? "left" : "top"}
         />
       </div>
     </div>

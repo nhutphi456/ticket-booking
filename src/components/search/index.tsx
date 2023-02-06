@@ -1,8 +1,5 @@
 import { Button } from "antd";
-import moment from "moment";
-import { useEffect, useMemo, useState } from "react";
 import useSearch from "../../hooks/useSearch";
-import { useAppSelector } from "../../redux/hooks";
 import * as Styled from "./styled";
 
 const SearchTab = () => {
@@ -57,8 +54,8 @@ const SearchTab = () => {
                     src={process.env.PUBLIC_URL + "/images/toolbar-city.png"}
                     alt="city-logo"
                   />
+                  <span className="title">Theater</span>
                 </div>
-                <span className="title">Theater</span>
                 <Styled.GroupSelect
                   placeholder="Theater"
                   options={theaterOptions}
@@ -72,8 +69,8 @@ const SearchTab = () => {
                     src={process.env.PUBLIC_URL + "/images/toolbar-date.png"}
                     alt="date-logo"
                   />
+                  <span className="title">Date</span>
                 </div>
-                <span className="title">Date</span>
                 <Styled.GroupSelect
                   placeholder="Date"
                   options={dateOptions}
@@ -87,8 +84,8 @@ const SearchTab = () => {
                     src={process.env.PUBLIC_URL + "/images/toolbar-cinema.png"}
                     alt="cinema-logo"
                   />
+                  <span className="title">Premiere</span>
                 </div>
-                <span className="title">Premiere</span>
                 <Styled.GroupSelect
                   placeholder="Cinema"
                   options={premiereOptions}

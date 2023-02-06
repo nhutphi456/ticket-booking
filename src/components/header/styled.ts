@@ -34,6 +34,13 @@ const Header = styled.div`
       color: #fff;
     }
   }
+  
+  @media (max-width: 480px) {
+    padding: 10px 0;
+    .logo-container img {
+      transform: scale(0.8);
+    }
+  }
 
   @keyframes fadeInDown {
     0% {

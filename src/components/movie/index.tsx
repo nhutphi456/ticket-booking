@@ -6,6 +6,7 @@ import { getMovieListAction } from "../../redux/movieSlice";
 import * as Styled from "./styled";
 import MovieItem from "./movie-item";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import useMobile from "../../hooks/useMobile";
 
 const PrevArrow = ({ onClick }: any) => {
   return (
@@ -27,25 +28,26 @@ const MovieList = () => {
     movie: { data },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
+  const isMobile = useMobile();
 
   useEffect(() => {
     dispatch(getMovieListAction());
   }, []);
 
   const settings = {
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: !isMobile ? <NextArrow /> : <></>,
+    prevArrow: !isMobile ? <PrevArrow /> : <></>,
   };
   return (
     <Styled.MovieList className="container">
       <Carousel draggable arrows {...settings}>
-        {_.chunk(data, 8).map((m, idx) => {
+        {_.chunk(data, !isMobile ? 8 : 4).map((m, idx) => {
           return (
             <div className="movie-slide" key={idx}>
-              <Row gutter={[40, 40]}>
+              <Row gutter={!isMobile ? [40, 40] : [5, 5]}>
                 {m.map((movie, index) => {
                   return (
-                    <Col key={index} span={6}>
+                    <Col key={index} md={6} sm={12} xs={12}>
                       <MovieItem movie={movie} />
                     </Col>
                   );
