@@ -11,7 +11,7 @@ export const AccountContainer = styled.div`
 `;
 
 export const MainContainer = styled.main`
-  padding-top: 88px;
+  // padding-top: 88px;
 
   @media (max-width: 768px) {
     padding-top: 20px;

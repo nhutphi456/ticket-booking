@@ -3,10 +3,10 @@ import { createBrowserRouter, RouteObject } from "react-router-dom";
 const Home = React.lazy(() => import("../pages/home")) as any;
 
 const routes: RouteObject[] = [
-    {
-        path: '/',
-        element: ''
-    }
-]
+  {
+    path: "/",
+    element: "",
+  }
+];
 
 export default routes;

@@ -5,6 +5,7 @@ import CinemaTabs from "./show-time-cinema-tab";
 import * as Styled from "./styled";
 import { ITheater } from "../../../models/theater";
 import useMobile from "../../../hooks/useMobile";
+import { CustomTabs } from "../styled";
 
 const ShowTime = () => {
   const { theaters } = useShowTime();
@@ -13,7 +14,7 @@ const ShowTime = () => {
   return (
     <div className="container">
       <div style={{ padding: "20px 0" }}>
-        <Styled.TheaterTabs
+        <CustomTabs
           defaultActiveKey="1"
           items={(theaters as any).map((theater: ITheater, key: number) => {
             return {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { IMovieItem } from "../../models/movie";
 import { PlayCircleFilled } from "@ant-design/icons";
 import * as Styled from "./styled";
@@ -7,7 +8,7 @@ interface Props {
   movie: IMovieItem;
 }
 const MovieItem = ({ movie }: Props) => {
-  const { tenPhim, hinhAnh, biDanh, trailer, danhGia } = movie;
+  const { tenPhim, hinhAnh, biDanh, trailer, danhGia, maPhim } = movie;
   return (
     <Styled.MovieItem>
       <Styled.MovieThumb className="movie-thumb" image={hinhAnh}>
@@ -22,7 +23,7 @@ const MovieItem = ({ movie }: Props) => {
       </Styled.MovieThumb>
       <div className="movie-content">
         <h5>
-          <a href="#">{tenPhim}</a>
+          <Link to={`/detail/${maPhim}`}>{tenPhim}</Link>
         </h5>
         <div className="ratings">
           <div className="rating-item">
