@@ -25,6 +25,9 @@ export const ShowTimeDetailItem = styled.div`
     &:first-child {
       border-top: 1px solid #11326f;
     }
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
   .cinema-branch-info {
     display: flex;
@@ -76,6 +79,9 @@ export const ShowTimeDetailItem = styled.div`
     //   width: 100%;
     //   border-bottom: 1px solid #8080803a;
     // }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   .btn-container {
     display: flex;

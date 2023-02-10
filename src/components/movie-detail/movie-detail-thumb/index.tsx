@@ -70,8 +70,10 @@ const MovieDetailThumb = ({ movie }: Props) => {
                 <p>Audience Score</p>
               </div>
             </div>
-            <div>
-              <Button className="book-btn">Book Tickets</Button>
+            <div className="book-btn-container">
+              <a href="#showTime">
+                <Button className="book-btn">Book Tickets</Button>
+              </a>
             </div>
           </div>
         </div>

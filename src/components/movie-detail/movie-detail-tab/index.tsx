@@ -1,5 +1,4 @@
 import { Tabs } from "antd";
-import React from "react";
 import { IMovieDetail } from "../../../models/movie";
 import MovieDetailShowTime from "./movie-detail-show-time";
 import MovieDetailSummary from "./movie-detail-summary";
@@ -12,6 +11,7 @@ const MovieDetailTab = ({ movie }: Props) => {
   return (
     <Styled.MovieDetailTab className="container">
       <Tabs
+        id="showTime"
         defaultActiveKey="1"
         items={[
           {

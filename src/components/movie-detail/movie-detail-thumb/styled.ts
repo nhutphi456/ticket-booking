@@ -5,6 +5,9 @@ export const MovieDetailThumb = styled.div`
     position: relative;
     .detail-banner-content {
       margin-left: 25%;
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
     }
   }
   .movie-name {
@@ -112,6 +115,9 @@ export const MoviePoster = styled.div<{ bgUrl: string }>`
     right: 0;
     background-color: rgba(0, 18, 50, 0.4);
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const BookSection = styled.div`
@@ -126,6 +132,10 @@ export const BookSection = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 768px) {
+      display: block;
+      margin-left: 0;
+    }
   }
   .left-side {
     display: flex;
@@ -148,12 +158,26 @@ export const BookSection = styled.div`
         }
       }
     }
+    @media (max-width: 768px) {
+      justify-content: center;
+      gap: 20px;
+    }
   }
-  .book-btn {
-    line-height: 28px;
-    padding: 10px 49px;
-    height: auto;
-    font-weight: 600;
-    text-transform: uppercase;
+  .book-btn-container {
+    .book-btn {
+      line-height: 28px;
+      padding: 10px 49px;
+      height: auto;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 0;
   }
 `;

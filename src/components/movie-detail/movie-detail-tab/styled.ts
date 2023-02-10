@@ -8,6 +8,9 @@ export const MovieDetailTab = styled.div`
     .ant-tabs-tab-btn {
       font-size: 18px;
       font-weight: 600;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
     }
     &.ant-tabs-tab-active .ant-tabs-tab-btn {
       color: #31d7a9;
@@ -27,4 +30,7 @@ export const MovieDetailSummary = styled.div`
   color: #dbe2fb;
   line-height: 28px;
   text-align: justify;
+  @media (max-width: 768px) {
+    margin: 10px;
+  }
 `;

@@ -1,4 +1,5 @@
 import React from "react";
+import useMobile from "../../../hooks/useMobile";
 import { IShowTimeDetail } from "../../../models/movie";
 import { CustomTabs } from "../styled";
 import ShowtimeDetailDateTab from "./show-time-detail-date-tab";
@@ -7,10 +8,11 @@ interface Props {
   showTimes: any;
 }
 const ShowTimeDetailTab = ({ showTimes }: Props) => {
+  const isMobile = useMobile();
   return (
     <CustomTabs
       defaultActiveKey="1"
-      tabPosition="left"
+      tabPosition={!isMobile ? "left" : "top"}
       items={showTimes.map((st: any, key: number) => {
         if (!st.rap.length) return;
         return {
