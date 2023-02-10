@@ -43,26 +43,6 @@ const useShowTimeDetail = (showDetails: IShowTimeDetail[]) => {
     setShowTimes(formattedShowTimes);
   }, [theaters, showDetails]);
 
-  // const showTimes = useMemo(() => {
-  //   if (!theaters.length) return [];
-  //   return theaters.map((theater: any) => {
-  //     const rap = showDetails.filter((show) => {
-  //       console.log(show.thongTinRap.maHeThongRap, theater.maHeThongRap);
-  //       return show.thongTinRap.maHeThongRap === theater.maHeThongRap;
-  //     });
-
-  //     const movieSchedules = formatShowTimes(rap);
-
-  //     return {
-  //       maHeThongRap: theater.maHeThongRap,
-  //       tenHeThongRap: theater.tenHeThongRap,
-  //       biDanh: theater.biDanh,
-  //       logo: theater.logo,
-  //       rap: movieSchedules,
-  //     };
-  //   });
-  // }, [theaters]);
-
   return showTimes;
 };
 

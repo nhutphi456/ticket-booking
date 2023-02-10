@@ -12,9 +12,9 @@ const movieApi = {
   getDetail: (id: number) => {
     return httpClient.get(`${URL}/LayThongTinPhim`, {
       params: {
-        maPhim: id
-      }
-    })
+        maPhim: id,
+      },
+    });
   }
 };
 
