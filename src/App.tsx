@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import CheckOut from "./pages/checkout";
 import Home from "./pages/home";
 import LoginPage from "./pages/login";
 import MovieDetailPage from "./pages/movie-detail";
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/detail/:movieId" element={<MovieDetailPage />} />
       <Route element={<RequireAuth />}>
         <Route path="/test" element={<TestPage />} />
+        <Route path="/checkout/:showId" element={<CheckOut />} />
       </Route>
     </Route>
   )

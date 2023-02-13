@@ -1,5 +1,6 @@
 import moment from "moment";
 import React from "react";
+import { Link } from "react-router-dom";
 import { getTheaterClass } from "../../../util/getTheaterGlass";
 import * as Styled from "./styled";
 
@@ -45,9 +46,15 @@ const ShowTimeDetailItem = ({ showTimeByDate }: Props) => {
               .filter((st: any) => st.thongTinRap.maCumRap === ac.maCumRap)
               .map((showTime: any, index: number) => {
                 return (
-                  <div key={index} className="btn-ticket" onClick={() => console.log(showTime.maLichChieu)}>
-                    {showTime.ngayChieuGioChieu.split("T")[1].slice(0, 5)}
-                  </div>
+                  <Link to={`/checkout/${showTime.maLichChieu}`}>
+                    <div
+                      key={index}
+                      className="btn-ticket"
+                      onClick={() => console.log(showTime.maLichChieu)}
+                    >
+                      {showTime.ngayChieuGioChieu.split("T")[1].slice(0, 5)}
+                    </div>
+                  </Link>
                 );
               })}
           </div>
