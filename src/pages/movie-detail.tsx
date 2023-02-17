@@ -20,11 +20,17 @@ const MovieDetailPage = () => {
     danhGia: -1,
     lichChieu: [],
   });
+  const [loading, setLoading] = useState(false)
+
   const fetchMovieDetail = async (id: number) => {
+    setLoading(true)
     try {
       const { data } = await movieApi.getDetail(id);
       setMovieDetail(data);
-    } catch (error) {}
+    } catch (error) {
+
+    }
+    setLoading(false)
   };
 
   useEffect(() => {
@@ -32,6 +38,7 @@ const MovieDetailPage = () => {
     fetchMovieDetail(+movieId);
   }, [movieId]);
 
+  if(loading) return <div>Loading...</div>
   return (
     <MainLayout>
       <MovieDetailThumb movie={movieDetail} />

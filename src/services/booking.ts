@@ -7,6 +7,9 @@ const bookingApi = {
       params: { MaLichChieu: showId },
     });
   },
+  bookTicket: (params: any) => {
+    return httpClient.post(`${URL}/DatVe`, params)
+  }
 };
 
 export { bookingApi };
