@@ -27,7 +27,7 @@ const Seat = ({ rowName, rowOrder, seat }: Props) => {
       !selectedSeatIds.includes(seat.maGhe)
     ) {
       message.destroy();
-      return message.warning("Bạn không thể chọn quá 10 ghế");
+      return message.warning(`Bạn không thể chọn quá ${SEAT_LIMIT} ghế`);
     }
     const formattedSeat = { ...seat, displaySeatId };
     console.log("seat", seat);

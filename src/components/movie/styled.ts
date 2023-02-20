@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieList = styled.div`
-  padding: 120px 100px;
+  padding: 120px 0px;
   position: relative;
   .slick-slide {
     > div {

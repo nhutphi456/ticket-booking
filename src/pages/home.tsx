@@ -4,8 +4,10 @@ import MovieList from "../components/movie";
 import SearchTab from "../components/search";
 import ShowTime from "../components/tabs/show-time";
 import MainLayout from "../layouts/main";
+import { useAppSelector } from "../redux/hooks";
 
 const Home = () => {
+ 
   return (
     <MainLayout>
       <Banner />

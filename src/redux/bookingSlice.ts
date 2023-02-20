@@ -47,6 +47,11 @@ const bookingSlice = createSlice({
         (sId) => sId !== action.payload.displaySeatId
       );
     },
+    resetSeat: (state) => {
+      state.selectedSeats = [];
+      state.selectedSeatIds = [];
+      state.displaySelectedSeats = [];
+    },
   },
   extraReducers: {
     [getBookingAction.pending.type]: (state) => {
@@ -66,5 +71,5 @@ const bookingSlice = createSlice({
   },
 });
 
-export const { addSeat, removeSeat } = bookingSlice.actions;
+export const { addSeat, removeSeat, resetSeat } = bookingSlice.actions;
 export default bookingSlice.reducer;

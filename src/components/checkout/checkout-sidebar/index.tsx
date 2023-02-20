@@ -1,8 +1,10 @@
 import { Button } from "antd";
 import moment from "moment";
 import React, { useState } from "react";
+import useBooking from "../../../hooks/useBooking";
 import { useAppSelector } from "../../../redux/hooks";
 import { formatAmount } from "../../../util/formatAmount";
+import BookingSuccessModal from "../../modals/booking-success";
 import * as Styled from "./styled";
 
 const CheckOutSideBar = () => {
@@ -16,6 +18,7 @@ const CheckOutSideBar = () => {
     auth: { user },
   } = useAppSelector((state) => state);
   const totalPrice = selectedSeats.reduce((acc, seat) => acc + seat.giaVe, 0);
+  const { onFinishBooking, isSuccessful } = useBooking();
 
   return (
     <Styled.CheckoutSidebar>
@@ -94,8 +97,9 @@ const CheckOutSideBar = () => {
         </div>
       </div>
       <div className="checkout-btn">
-        <Button disabled={selectedSeats.length === 0}>Đặt Vé</Button>
+        <Button disabled={selectedSeats.length === 0} onClick={onFinishBooking}>Đặt Vé</Button>
       </div>
+      <BookingSuccessModal isOpen={isSuccessful}/>
     </Styled.CheckoutSidebar>
   );
 };

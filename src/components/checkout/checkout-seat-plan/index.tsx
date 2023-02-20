@@ -1,10 +1,9 @@
 import { useTimer } from "../../../hooks/useTimer";
 import { useAppSelector } from "../../../redux/hooks";
-import { Modal } from 'antd';
+import TimeOutModal from "../../modals/time-out";
 import CheckoutSeatPlanHeader from "./checkout-seat-plan-header";
 import Seats from "./checkout-seats";
 import * as Styled from "./styled";
-import TimeOutModal from "../../modals/time-out";
 
 const CheckOutSeatPlan = () => {
   const {
