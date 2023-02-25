@@ -1,14 +1,62 @@
+import { Drawer } from "antd";
 import styled from "styled-components";
 
-export const CheckoutSidebar = styled.div`
+export const CheckoutFooterMobile = styled.div`
   position: fixed;
-  right: 0;
-  top: 0;
-  width: 25%;
-  height: 100vh;
-  background-color: #0a1e5e;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background: #0a1e5e;
   box-shadow: rgb(0 0 0 / 30%) 0px 0px 15px;
-  z-index: 100;
+  z-index: 9999;
+  > div {
+    width: 50%;
+  }
+  .selected-seats {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    .seat-item {
+      line-height: 1.5;
+      &::after {
+        content: ", ";
+      }
+      &:last-child::after {
+        content: "";
+      }
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+      width: 90%;
+      font-size: 14px;
+    }
+  }
+  .footer-btn {
+    button {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      &:disabled {
+        color: #fff;
+        background-color: rgb(175, 175, 175);
+        background-image: none;
+      }
+    }
+  }
+`;
+
+export const CheckoutDrawer = styled(Drawer)`
+  .ant-drawer-content-wrapper {
+    width: 100% !important;
+  }
+  .ant-drawer-body {
+    background-color: #0a1e5e;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 15px;
+    padding: 5px;
+  }
   .booking-info {
     padding: 0 8%;
     > div {
@@ -123,34 +171,5 @@ export const CheckoutSidebar = styled.div`
         }
       }
     }
-  }
-  .checkout-btn {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    .ant-btn {
-      width: 100%;
-      height: auto;
-      font-size: 25px;
-      font-weight: 600;
-      padding: 15px 0;
-      border-radius: 0;
-      &:disabled {
-        color: #fff;
-        background-color: rgb(175, 175, 175);
-        background-image: none;
-      }
-    }
-  }
-
-  @media (max-width: 1280px) {
-    width: 28%;
-  }
-  @media (max-width: 1280px) {
-    width: 30%;
-  }
-  @media (max-width: 768px) {
-    width: 0%;
   }
 `;

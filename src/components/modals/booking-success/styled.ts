@@ -14,9 +14,24 @@ export const SuccessBookingModal = styled(Modal)`
     table {
       width: 100%;
       font-size: 18px;
+      tr {
+        border-top: 1px solid #dee2e6;
+      }
       tr td {
         padding: 10px 0;
         border-top: 1px solid #dee2e6;
+      }
+    }
+    @media (max-width: 480px) {
+      margin-top: 7px;
+      .title {
+        font-size: 18px;
+      }
+      table {
+        font-size: 12px;
+        tr td {
+          padding: 5px 0;
+        }
       }
     }
   }
@@ -25,6 +40,9 @@ export const SuccessBookingModal = styled(Modal)`
     font-weight: 600;
     font-style: italic;
     margin-top: 10px;
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
   }
   .modal-title {
     font-size: 24px;
@@ -37,6 +55,13 @@ export const SuccessBookingModal = styled(Modal)`
       margin-right: 10px;
       font-size: 32px;
       color: #16ff00;
+    }
+    @media (max-width: 480px) {
+      font-size: 18px;
+      margin-bottom: 7px;
+      .success-icon {
+        font-size: 20px
+      }
     }
   }
   .modal-footer {
@@ -56,6 +81,9 @@ export const SuccessBookingModal = styled(Modal)`
       line-height: 1.5;
       font-size: 17px;
       font-weight: 600;
+      @media (max-width: 480px) {
+        font-size: 15px;
+      }
     }
     table {
       width: 100%;
@@ -69,6 +97,9 @@ export const SuccessBookingModal = styled(Modal)`
       padding-bottom: 5px;
       margin-bottom: 5px;
       border-bottom: 1px dashed #11326f;
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
     }
     .address {
       font-size: 14px;
@@ -85,6 +116,15 @@ export const SuccessBookingModal = styled(Modal)`
         content: "";
       }
     }
+    @media (max-width: 480px) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  .ant-modal-content {
+    @media (max-width: 480px) {
+      padding: 10px 12px;
+    }
   }
 `;
 
@@ -96,4 +136,7 @@ export const MovieImage = styled.div<{ bgUrl: string }>`
   height: 190px;
   width: 30%;
   border-radius: 4px;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;

@@ -1,13 +1,10 @@
-import { Button } from "antd";
-import moment from "moment";
-import React, { useState } from "react";
-import useBooking from "../../../hooks/useBooking";
+import { DrawerProps } from "antd";
+import { useState } from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import { formatAmount } from "../../../util/formatAmount";
-import BookingSuccessModal from "../../modals/booking-success";
 import * as Styled from "./styled";
 
-const CheckOutSideBar = () => {
+const CheckoutDrawer = ({...props}: DrawerProps) => {
   const [activePaymentOption, setActivePaymentOption] = useState(1);
   const {
     booking: {
@@ -18,10 +15,8 @@ const CheckOutSideBar = () => {
     auth: { user },
   } = useAppSelector((state) => state);
   const totalPrice = selectedSeats.reduce((acc, seat) => acc + seat.giaVe, 0);
-  const { onFinishBooking, isSuccessful } = useBooking();
-
   return (
-    <Styled.CheckoutSidebar>
+    <Styled.CheckoutDrawer {...props}>
       <div className="booking-info">
         <div className="total-price">{formatAmount(totalPrice)} đ</div>
         <div className="movie-info">
@@ -29,8 +24,8 @@ const CheckOutSideBar = () => {
           <p>{thongTinPhim && thongTinPhim.tenCumRap}</p>
           {/* <p>{thongTinPhim && thongTinPhim.ngayChieu}</p> */}
           <p>
-            {thongTinPhim && thongTinPhim.ngayChieu}{" "}
-            - {thongTinPhim && thongTinPhim.gioChieu} -{" "}
+            {thongTinPhim && thongTinPhim.ngayChieu} -{" "}
+            {thongTinPhim && thongTinPhim.gioChieu} -{" "}
             {thongTinPhim && thongTinPhim.tenRap}
           </p>
         </div>
@@ -95,12 +90,8 @@ const CheckOutSideBar = () => {
           </ul>
         </div>
       </div>
-      <div className="checkout-btn">
-        <Button disabled={selectedSeats.length === 0} onClick={onFinishBooking}>Đặt Vé</Button>
-      </div>
-      <BookingSuccessModal isOpen={isSuccessful}/>
-    </Styled.CheckoutSidebar>
+    </Styled.CheckoutDrawer>
   );
 };
 
-export default CheckOutSideBar;
+export default CheckoutDrawer;

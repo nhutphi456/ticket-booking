@@ -16,18 +16,28 @@ export const SeatPlan = styled.div`
     padding: 15px;
     width: 82%;
     margin: 0 auto;
+    @media (max-width: 480px) {
+      width: 90%;
+      padding: 15px 10px;
+    }
   }
   .seat-container {
     width: calc(100% - 100px);
     background-color: #001232;
+    @media (max-width: 1080px) {
+      width: 100%;
+    }
   }
   .seats {
+    width: 85%;
+    margin: 0 auto;
+    overflow-x: scroll;
     .screen {
       text-align: center;
       position: relative;
       img {
         height: 50px;
-        width: 85%;
+        width: 100%;
       }
       .screen-text {
         position: absolute;
@@ -38,6 +48,9 @@ export const SeatPlan = styled.div`
         text-transform: uppercase;
         letter-spacing: 5px;
       }
+    }
+    @media (max-width: 480px) {
+      width: 90%;
     }
   }
   .theater-info {
@@ -69,6 +82,16 @@ export const SeatPlan = styled.div`
     background-color: #000;
     z-index: 999;
   }
+
+  @media (max-width: 1280px) {
+    width: 72%;
+  }
+  @media (max-width: 1080px) {
+    width: 70%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const SeatPlanHeader = styled.div`
@@ -95,6 +118,15 @@ export const SeatPlanHeader = styled.div`
     display: flex;
     align-items: center;
   }
+  @media (max-width: 1280px) {
+    width: 72%;
+  }
+  @media (max-width: 1080px) {
+    width: 70%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const SeatPlanMovieThumb = styled.div<{ bgUrl: string }>`
@@ -115,6 +147,9 @@ export const SeatPlanMovieThumb = styled.div<{ bgUrl: string }>`
     background-color: #000;
     opacity: 0.5;
   }
+  @media (max-width: 1080px) {
+    width: 0;
+  }
 `;
 
 export const Seats = styled.div`
@@ -124,7 +159,7 @@ export const Seats = styled.div`
   gap: 10px;
   margin-top: 20px;
   .theater-row {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -136,17 +171,24 @@ export const Seats = styled.div`
     text-align: center;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 2%;
     transform: translateY(-50%);
     span {
       font-size: 20px;
       font-weight: 600;
+    }
+
+    @media (max-width: 1280px) {
+      // left: -30px;
     }
   }
   .seat-row {
     display: flex;
     align-items: center;
     gap: 7px;
+    @media (max-width: 1080px) {
+      gap: 3px;
+    }
   }
   .seat-note {
     display: flex;
@@ -165,7 +207,16 @@ export const Seats = styled.div`
       p {
         margin-top: 5px;
       }
+      @media (max-width: 480px) {
+        p {
+          font-size: 12px;
+        }
+      }
     }
+  }
+
+  @media (max-width: 480px) {
+    gap: 5px;
   }
 `;
 
@@ -185,6 +236,27 @@ export const Seat = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+  }
+  @media (max-width: 1280px) {
+    .seat {
+      width: 32px;
+    }
+  }
+  @media (max-width: 1080px) {
+    // height: 23.5px;
+    .seat {
+      width: 30px;
+    }
+    .seat-name {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 25px;
+    .seat {
+      width: 25px;
+    }
   }
 `;
 
