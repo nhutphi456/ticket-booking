@@ -1,8 +1,7 @@
-import { Button, Tabs } from "antd";
+import { Collapse, Tabs } from "antd";
 import styled from "styled-components";
 
-export const TheaterTabs = styled(Tabs)`
-`;
+export const TheaterTabs = styled(Tabs)``;
 export const CinemaTabs = styled(Tabs)`
   max-height: 705px;
   // overflow: hidden scroll;
@@ -89,6 +88,9 @@ export const CinemaLabel = styled.div`
     width: 100%;
     border-bottom: 1px solid #8080803a;
     // opacity: 0.3;
+    @media (max-width: 480px) {
+      bottom: -10px;
+    }
   }
 `;
 
@@ -128,6 +130,9 @@ export const MovieShowTimeItem = styled.div`
         display: flex;
         gap: 5px;
         flex-wrap: wrap;
+        @media (max-width: 480px) {
+          gap: 2px;
+        }
       }
     }
   }
@@ -139,30 +144,48 @@ export const MovieShowTimeItem = styled.div`
     width: calc(100% - 40px);
     transform: translateX(-50%);
     border-bottom: 1px solid #8080803a;
+    @media (max-width: 480px) {
+      width: calc(100% - 28px);
+    }
+  }
+  @media (max-width: 480px) {
+    padding: 20px 10px;
   }
 `;
 
-export const ShowTimeButton = styled(Button)`
-  font-size: 14px;
-  font-weight: 500;
-  background: none;
-  background-color: transparent;
-  color: #9b9b9b;
-  border-radius: 7px;
-  padding: 5px 5px;
-  border: 1px solid #e4e4e4;
-  display: flex;
-  align-items: center;
-  .start-time {
-    color: #5b05b4;
-    font-size: 17px;
-    transition: all 0.5s;
+export const CinamaCollapse = styled(Collapse)`
+  border: none;
+  border-radius: 0;
+  .ant-collapse {
   }
-  &:hover {
-    color: #9b9b9b !important;
-    border-color: #e4e4e4 !important;
-    .start-time {
-      color: #dc496a;
+  .ant-collapse-content {
+    background-color: #011943;
+    .ant-collapse-content-box {
+      padding: 0;
+    }
+  }
+  .cinema-branch {
+    color: #fff;
+  }
+  .ant-collapse-item:last-child > .ant-collapse-header {
+    border-radius: 0px !important;
+  }
+  .ant-collapse-item {
+    border-bottom: none;
+    .ant-collapse-header {
+      padding: 20px 16px;
+      .ant-collapse-header-text {
+        width: 100%;
+      }
+      .ant-collapse-expand-icon {
+        display: none;
+      }
+      @media (max-width: 480px) {
+        padding: 10px;
+      }
+    }
+    .ant-collapse-arrow {
+      color: #fff !important;
     }
   }
 `;

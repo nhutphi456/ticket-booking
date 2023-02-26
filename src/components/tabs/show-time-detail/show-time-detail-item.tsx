@@ -2,15 +2,13 @@ import moment from "moment";
 import React from "react";
 import { Link } from "react-router-dom";
 import { getTheaterClass } from "../../../util/getTheaterGlass";
+import TicketButton from "../../button/ticket";
 import * as Styled from "./styled";
 
 interface Props {
   showTimeByDate: any;
 }
 
-const TicketButton = () => {
-  return <div className="ticket-btn"></div>;
-};
 const ShowTimeDetailItem = ({ showTimeByDate }: Props) => {
   const renderShowItem = () => {
     let availableComplexes: any[] = [];
@@ -47,13 +45,14 @@ const ShowTimeDetailItem = ({ showTimeByDate }: Props) => {
               .map((showTime: any, index: number) => {
                 return (
                   <Link to={`/checkout/${showTime.maLichChieu}`}>
-                    <div
+                    {/* <div
                       key={index}
                       className="btn-ticket"
                       onClick={() => console.log(showTime.maLichChieu)}
                     >
-                      {showTime.ngayChieuGioChieu.split("T")[1].slice(0, 5)}
-                    </div>
+                      {showTime.ngayChieuGioChieu.split("T")[1].slice(0, 5)} ~ 15:00
+                    </div> */}
+                    <TicketButton key={index} ngayChieuGioChieu={showTime.ngayChieuGioChieu}/>
                   </Link>
                 );
               })}

@@ -1,8 +1,7 @@
-import { Button } from "antd";
 import moment from "moment";
-import React from "react";
+import { Link } from "react-router-dom";
 import { useFormattedShowTime } from "../../../hooks/useFormattedShowTimes";
-import ShowTimeButton from "./show-time-cinema-button";
+import TicketButton from "../../button/ticket";
 import * as Styled from "./styled";
 
 const MovieShowTimeItem = ({ film }: any) => {
@@ -28,7 +27,9 @@ const MovieShowTimeItem = ({ film }: any) => {
             </div>
             <div className="show-time-buttons">
               {s.lichChieuTheoNgay.map((lc: any, idx: number) => (
-                <ShowTimeButton showTime={lc} key={idx} />
+                <Link to={`/checkout/${lc.maLichChieu}`}>
+                  <TicketButton ngayChieuGioChieu={lc.ngayChieuGioChieu} />
+                </Link>
               ))}
             </div>
           </div>

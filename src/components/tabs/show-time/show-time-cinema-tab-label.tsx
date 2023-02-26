@@ -27,8 +27,8 @@ const CinemaLabel = ({ data }: Props) => {
         <p className="cinema-detail">
           <span className={`cinema-name ${getTheaterClass(maHeThongRap)}`}>
             {cinemaName}
-          </span>{" "}
-          - <span className="cinema-branch">{branch}</span>
+          </span>
+          <span className="cinema-branch"> - {branch}</span>
         </p>
         <p className="cinema-address">{cinema.diaChi}</p>
       </div>

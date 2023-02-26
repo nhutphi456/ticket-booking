@@ -55,4 +55,7 @@ export const CustomTabs = styled(Tabs)`
       border-bottom: 1px solid #8080803a;
     }
   }
+  @media (max-width: 480px) {
+    max-height: unset;
+  }
 `;
