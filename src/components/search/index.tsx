@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 import * as Styled from "./styled";
 
@@ -17,9 +18,10 @@ const SearchTab = () => {
     handleDateChange,
     handlePremiereChange,
   } = useSearch();
+  const navigate = useNavigate()
 
   const onFinish = (val: string) => {
-    console.log(val);
+    navigate(`/checkout/${val}`)
   };
 
   return (
@@ -61,6 +63,13 @@ const SearchTab = () => {
                   options={theaterOptions}
                   value={selectedTheater}
                   onSelect={(val: any) => handleTheaterChange(val)}
+                  notFoundContent={
+                    <span style={{ color: "grey" }}>
+                      {selectedMovieId < 0
+                        ? "Vui lòng chọn phim"
+                        : "Tiếc quá, không có rạp chiếu phim này"}
+                    </span>
+                  }
                 />
               </div>
               <div className="search-group">
@@ -76,6 +85,11 @@ const SearchTab = () => {
                   options={dateOptions}
                   value={selectedDate}
                   onChange={(val: any) => handleDateChange(val)}
+                  notFoundContent={
+                    <span style={{ color: "grey" }}>
+                      Vui lòng chọn rạp chiếu
+                    </span>
+                  }
                 />
               </div>
               <div className="search-group">
@@ -91,6 +105,11 @@ const SearchTab = () => {
                   options={premiereOptions}
                   value={selectedPremiere}
                   onChange={(val: any) => handlePremiereChange(val)}
+                  notFoundContent={
+                    <span style={{ color: "grey" }}>
+                      Vui lòng chọn ngày
+                    </span>
+                  }
                 />
               </div>
             </div>

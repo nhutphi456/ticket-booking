@@ -177,6 +177,10 @@ const MovieSelect = styled(Select)`
   .ant-select-arrow {
     color: #90a5e8;
   }
+
+  .not-found-content {
+    color: red;
+  }
 `;
 
 const GroupSelect = styled(Select)`
@@ -211,7 +215,7 @@ const GroupSelect = styled(Select)`
   @media (max-width: 768px) {
     width: 100%;
     .ant-select-selector {
-      padding: 0!important;
+      padding: 0 !important;
     }
   }
 `;
