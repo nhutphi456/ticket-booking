@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../components/loading";
 import MovieDetailTab from "../components/movie-detail/movie-detail-tab";
 import MovieDetailThumb from "../components/movie-detail/movie-detail-thumb";
 import MainLayout from "../layouts/main";
@@ -38,7 +39,7 @@ const MovieDetailPage = () => {
     fetchMovieDetail(+movieId);
   }, [movieId]);
 
-  if(loading) return <div>Loading...</div>
+  if(loading) return <Loading/>
   return (
     <MainLayout>
       <MovieDetailThumb movie={movieDetail} />

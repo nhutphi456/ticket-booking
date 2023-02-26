@@ -8,9 +8,10 @@ import useMobile from "../../../hooks/useMobile";
 import { CustomTabs } from "../styled";
 
 const ShowTime = () => {
-  const { theaters } = useShowTime();
+  const { theaters, loading } = useShowTime();
   const isMobile = useMobile();
 
+  if(loading) return <div>Loading...</div>
   return (
     <div className="container">
       <div style={{ padding: "20px 0" }}>

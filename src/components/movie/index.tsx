@@ -25,7 +25,7 @@ const NextArrow = ({ onClick }: any) => {
 };
 const MovieList = () => {
   const {
-    movie: { data },
+    movie: { data, loading },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
   const isMobile = useMobile();
@@ -38,6 +38,7 @@ const MovieList = () => {
     nextArrow: !isMobile ? <NextArrow /> : <></>,
     prevArrow: !isMobile ? <PrevArrow /> : <></>,
   };
+  if(loading) return <div>Loading...</div>
   return (
     <Styled.MovieList className="container">
       <Carousel draggable arrows {...settings}>

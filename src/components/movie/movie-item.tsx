@@ -23,7 +23,7 @@ const MovieItem = ({ movie }: Props) => {
       </Styled.MovieThumb>
       <div className="movie-content">
         <h5>
-          <Link to={`/detail/${maPhim}`}>{tenPhim}</Link>
+          <Link to={`/movie/${maPhim}`}>{tenPhim}</Link>
         </h5>
         <div className="ratings">
           <div className="rating-item">

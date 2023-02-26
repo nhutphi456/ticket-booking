@@ -4,6 +4,7 @@ import styled from "styled-components";
 import CheckoutFooterMobile from "../components/checkout/checkout-footer-mobile";
 import CheckOutSeatPlan from "../components/checkout/checkout-seat-plan";
 import CheckOutSideBar from "../components/checkout/checkout-sidebar";
+import Loading from "../components/loading";
 import useMobile from "../hooks/useMobile";
 import { getBookingAction, resetSeat } from "../redux/bookingSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
@@ -29,7 +30,7 @@ const CheckOut = () => {
     };
   }, [showId]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   return (
     <StyledCheckOut>
       <CheckOutSeatPlan />

@@ -10,7 +10,7 @@ import { theaterApi } from "../services/theater";
 const useShowTime = () => {
   const dispatch = useAppDispatch();
   const {
-    theater: { theaters },
+    theater: { theaters, loading },
   } = useAppSelector((state) => state);
 
   const getTheater = useCallback(() => {
@@ -63,7 +63,7 @@ const useShowTime = () => {
     getTheater();
   }, []);
 
-  return { theaters };
+  return { theaters, loading };
 };
 
 export default useShowTime;
