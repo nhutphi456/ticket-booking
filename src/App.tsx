@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import Account from "./pages/account";
 import CheckOut from "./pages/checkout";
 import Home from "./pages/home";
 import LoginPage from "./pages/login";
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route element={<RequireAuth />}>
         <Route path="/test" element={<TestPage />} />
         <Route path="/checkout/:showId" element={<CheckOut />} />
+        <Route path="/account" element={<Account />} />
       </Route>
     </Route>
   )

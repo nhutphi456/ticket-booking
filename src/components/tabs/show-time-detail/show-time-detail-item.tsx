@@ -45,13 +45,6 @@ const ShowTimeDetailItem = ({ showTimeByDate }: Props) => {
               .map((showTime: any, index: number) => {
                 return (
                   <Link to={`/checkout/${showTime.maLichChieu}`}>
-                    {/* <div
-                      key={index}
-                      className="btn-ticket"
-                      onClick={() => console.log(showTime.maLichChieu)}
-                    >
-                      {showTime.ngayChieuGioChieu.split("T")[1].slice(0, 5)} ~ 15:00
-                    </div> */}
                     <TicketButton key={index} ngayChieuGioChieu={showTime.ngayChieuGioChieu}/>
                   </Link>
                 );

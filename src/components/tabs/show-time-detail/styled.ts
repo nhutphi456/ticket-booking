@@ -146,7 +146,7 @@ export const DateCollapse = styled(Collapse)`
     color: #31d7a9;
     display: flex;
     > p:first-child {
-      width: 20%;
+      width: 30%;
     }
   }
 `;

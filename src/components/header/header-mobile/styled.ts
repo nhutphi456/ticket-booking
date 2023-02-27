@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Drawer } from "antd";
 export const HeaderMobile = styled.div`
-  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,14 +14,21 @@ export const HeaderMobile = styled.div`
     align-items: center;
   }
   .menu-icon {
-    > div {
-      width: 40px;
-      height: 5px;
-      background-color: grey;
-      border-radius: 10px;
-      // border-bottom: 5px solid grey;
-      margin-top: 5px;
+    > svg {
+      font-size: 30px;
     }
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+    img {
+      @media (max-width: 480px) {
+        width: 100px;
+      }
+    }
+  }
+  .menu-dropdown {
+    background-color: red;
   }
 `;
 
@@ -41,8 +47,8 @@ export const SideBar = styled(Drawer)`
       width: 100%;
       height: auto;
       padding: 10px;
-      font-size: 16px;[]
-      font-weight: 700;
+      font-size: 16px;
+      []font-weight: 700;
       &:last-child {
         margin-top: 5px;
       }

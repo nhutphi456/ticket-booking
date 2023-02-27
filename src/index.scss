@@ -37,3 +37,18 @@ body {
     max-width: 1170px;
   }
 }
+
+.menu-dropdown {
+  .ant-dropdown-menu {
+    .ant-dropdown-menu-item {
+      border-bottom: 1px solid #8080803a;
+      border-radius: 0;
+      .log-out-btn {
+        color: #FF0303;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

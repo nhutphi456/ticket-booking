@@ -1,82 +1,80 @@
-import React, { useEffect, useState } from "react";
-import * as Styled from "./styled";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { MenuProps } from "antd";
-import { Button, Menu } from "antd";
+import { Dropdown } from "antd";
+import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import { useAppSelector } from "../../../redux/hooks";
+import * as Styled from "./styled";
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[],
-  type?: "group"
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
-}
-
-const items: MenuItem[] = [getItem("Login", "1"), getItem("Join Us", "2")];
 const HeaderMobile = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [open, setOpen] = useState(false);
+  const {
+    auth: { isAuthenticated, user },
+  } = useAppSelector((state) => state);
+  const { logout } = useAuth();
 
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-  useEffect(() => {
-    const handleHeaderScroll = () => {
-      if (
-        document.body.scrollTop > 0 ||
-        document.documentElement.scrollTop > 0
-      ) {
-        setIsActive(true);
-      } else {
-        setIsActive(false);
-      }
-    };
-    window.addEventListener("scroll", handleHeaderScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleHeaderScroll);
-    };
-  }, []);
+  const items: MenuProps["items"] = isAuthenticated
+    ? [
+        {
+          key: "1",
+          label: (
+            <Link to="/account">
+              <span className="dropdown-menu-item">
+                Tài khoản: {user && user.hoTen}
+              </span>
+            </Link>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <span onClick={logout} className="dropdown-menu-item log-out-btn">
+              Đăng xuất
+            </span>
+          ),
+        },
+      ]
+    : [
+        {
+          key: "1",
+          label: (
+            <Link to="/login">
+              <span className="dropdown-menu-item">Đăng nhập</span>
+            </Link>
+          ),
+        },
+        {
+          key: "2",
+          label: (
+            <Link to="/signup">
+              <span className="dropdown-menu-item">Đăng ký</span>
+            </Link>
+          ),
+        },
+      ];
 
   return (
-    <Styled.HeaderMobile className={isActive ? "header-active" : ""}>
+    <Styled.HeaderMobile>
       <div className="container">
         <div className="header-mobile-wrapper">
-          <div className="logo-container">
-            <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
-          </div>
-          <div className="header-right">
-            <div className="menu-icon" onClick={showDrawer}>
-              <div></div>
-              <div></div>
-              <div></div>
+          <Link to="/">
+            <div className="logo-container">
+              <img
+                src={process.env.PUBLIC_URL + "/images/logo.png"}
+                alt="logo"
+              />
             </div>
-            <Styled.SideBar 
-              placement="right"
-              onClose={onClose}
-              open={open}
-              theme="dark"
-              contentWrapperStyle={{
-                width: '100%',
-                backgroundColor: '#0a1e5e'
-              }}
+          </Link>
+          <div className="header-right">
+            <Dropdown
+              menu={{ items }}
+              trigger={["click"]}
+              overlayClassName="menu-dropdown"
             >
-              <Button>Log In</Button>
-              <Button>Join Us</Button>
-            </Styled.SideBar>
+              <div className="menu-icon">
+                <FontAwesomeIcon icon={faBars} />
+              </div>
+            </Dropdown>
           </div>
         </div>
       </div>
