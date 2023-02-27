@@ -15,20 +15,21 @@ const MovieDetailTab = ({ movie }: Props) => {
         defaultActiveKey="1"
         items={[
           {
-            key: "2",
-            label: "Summary",
-            children: <MovieDetailSummary data={movie.moTa} />,
-          },
-          {
             key: "1",
             label: "Show Times",
             children: <MovieDetailShowTime movie={movie} />,
           },
           {
-            key: "3",
-            label: "Review",
-            children: "content",
+            key: "2",
+            label: "Summary",
+            children: <MovieDetailSummary data={movie.moTa} />,
           },
+
+          // {
+          //   key: "3",
+          //   label: "Review",
+          //   children: "content",
+          // },
         ]}
         centered
       />

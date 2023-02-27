@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
-import { Carousel, Row, Col } from "antd";
-import _ from "lodash";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { getMovieListAction } from "../../redux/movieSlice";
-import * as Styled from "./styled";
-import MovieItem from "./movie-item";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { Carousel, Col, Row } from "antd";
+import _ from "lodash";
 import useMobile from "../../hooks/useMobile";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import MovieItem from "./movie-item";
+import * as Styled from "./styled";
 
 const PrevArrow = ({ onClick }: any) => {
   return (
@@ -25,20 +23,20 @@ const NextArrow = ({ onClick }: any) => {
 };
 const MovieList = () => {
   const {
-    movie: { data, loading },
+    movie: { data },
   } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
   const isMobile = useMobile();
 
-  useEffect(() => {
-    dispatch(getMovieListAction());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getMovieListAction());
+  // }, []);
 
   const settings = {
     nextArrow: !isMobile ? <NextArrow /> : <></>,
     prevArrow: !isMobile ? <PrevArrow /> : <></>,
   };
-  if(loading) return <div>Loading...</div>
+  // if(loading) return <div>Loading...</div>
   return (
     <Styled.MovieList className="container">
       <Carousel draggable arrows {...settings}>

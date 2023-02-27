@@ -156,8 +156,6 @@ export const MovieShowTimeItem = styled.div`
 export const CinamaCollapse = styled(Collapse)`
   border: none;
   border-radius: 0;
-  .ant-collapse {
-  }
   .ant-collapse-content {
     background-color: #011943;
     .ant-collapse-content-box {

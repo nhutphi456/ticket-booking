@@ -5,26 +5,30 @@ import Loading from "../components/loading";
 import MovieList from "../components/movie";
 import SearchTab from "../components/search";
 import ShowTime from "../components/tabs/show-time";
+import useShowTime from "../hooks/useShowTime";
 import MainLayout from "../layouts/main";
-import { useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { getMovieListAction } from "../redux/movieSlice";
 
 const Home = () => {
-  const [loadingTime, setLoadingTime] = useState(true);
+  const {
+    movie: { loading },
+  } = useAppSelector((state) => state);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoadingTime(false);
-    }, 1500);
+    dispatch(getMovieListAction());
   }, []);
 
+  if (loading) return <Loading />;
   return (
-      <MainLayout>
-        {loadingTime && <Loading />}
-        <Banner />
-        <SearchTab />
-        <MovieList />
-        <ShowTime />
-        {/* <iframe
+    <MainLayout>
+      {/* {loading && <Loading />} */}
+      <Banner />
+      <SearchTab />
+      <MovieList />
+      <ShowTime />
+      {/* <iframe
         width="560"
         height="315"
         src="https://www.youtube.com/embed/K7AL2OARpTo"
@@ -33,7 +37,7 @@ const Home = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         // allowfullscreen
       ></iframe> */}
-      </MainLayout>
+    </MainLayout>
   );
 };
 

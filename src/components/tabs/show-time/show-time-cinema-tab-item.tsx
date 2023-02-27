@@ -27,7 +27,7 @@ const MovieShowTimeItem = ({ film }: any) => {
             </div>
             <div className="show-time-buttons">
               {s.lichChieuTheoNgay.map((lc: any, idx: number) => (
-                <Link to={`/checkout/${lc.maLichChieu}`}>
+                <Link to={`/checkout/${lc.maLichChieu}`} key={idx}>
                   <TicketButton ngayChieuGioChieu={lc.ngayChieuGioChieu} />
                 </Link>
               ))}

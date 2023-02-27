@@ -1,17 +1,14 @@
-import React, { useEffect } from "react";
-import useShowTime from "../../../hooks/useShowTime";
-import { Tabs } from "antd";
-import CinemaTabs from "./show-time-cinema-tab";
-import * as Styled from "./styled";
-import { ITheater } from "../../../models/theater";
 import useMobile from "../../../hooks/useMobile";
+import useShowTime from "../../../hooks/useShowTime";
+import { ITheater } from "../../../models/theater";
 import { CustomTabs } from "../styled";
+import CinemaTabs from "./show-time-cinema-tab";
 
 const ShowTime = () => {
   const { theaters, loading } = useShowTime();
   const isMobile = useMobile();
 
-  if(loading) return <div>Loading...</div>
+  if (loading) return <div>Loading...</div>;
   return (
     <div className="container">
       <div style={{ padding: "20px 0" }}>

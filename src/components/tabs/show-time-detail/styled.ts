@@ -1,4 +1,4 @@
-import { Tabs } from "antd";
+import { Collapse, Tabs } from "antd";
 import styled from "styled-components";
 
 export const DateTab = styled(Tabs)`
@@ -35,7 +35,6 @@ export const ShowTimeDetailItem = styled.div`
     color: #fff;
     width: 40%;
     .cinema-info {
-      padding-left: 10px;
       width: calc(100% - 60px);
       p {
         text-align: left;
@@ -103,6 +102,51 @@ export const ShowTimeDetailItem = styled.div`
       &:hover {
         background: #31d7a9;
       }
+    }
+  }
+`;
+
+export const DateCollapse = styled(Collapse)`
+  border: none;
+  border-radius: 0;
+  .ant-collapse-content {
+    background-color: #011943;
+    .ant-collapse-content-box {
+      padding: 0;
+    }
+  }
+  .ant-collapse-item:last-child > .ant-collapse-header {
+    border-radius: 0px !important;
+  }
+  .ant-collapse-item {
+    border-bottom: none;
+    .ant-collapse-header {
+      padding: 20px 16px;
+      .ant-collapse-header-text {
+        width: 100%;
+      }
+      .ant-collapse-expand-icon {
+        display: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 20px);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 1px solid #8080803a;
+      }
+      @media (max-width: 480px) {
+        padding: 20px 10px;
+      }
+    }
+  }
+  .date-header {
+    color: #31d7a9;
+    display: flex;
+    > p:first-child {
+      width: 20%;
     }
   }
 `;
