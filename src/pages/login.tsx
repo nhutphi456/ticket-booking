@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginForm from "../components/form/login";
+import LoginForm from "../components/form/account/login";
 import AccountLayout from "../layouts/account-layout";
 import { useAppSelector } from "../redux/hooks";
 

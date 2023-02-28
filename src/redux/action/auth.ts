@@ -1,4 +1,4 @@
-import { ILoginUser } from "../../models/user";
+import { ILoginUser, ISingupUser } from "../../models/user";
 import { authApi } from "../../services/auth";
 
 export const login = async (values: ILoginUser, { rejectWithValue }: any) => {
@@ -9,3 +9,12 @@ export const login = async (values: ILoginUser, { rejectWithValue }: any) => {
     return rejectWithValue(error);
   }
 };
+
+export const signup = async (values: ISingupUser, {rejectWithValue}: any) => {
+  try {
+    const res = await authApi.signup(values)
+    return res
+  } catch (error) {
+    return rejectWithValue(error)
+  }
+}

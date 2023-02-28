@@ -1,13 +1,15 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ILoginUser } from "../models/user";
-import { authApi } from "../services/auth";
-import { login } from "./action/auth";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { ILoginUser, ISingupUser } from "../models/user";
+import { login, signup } from "./action/auth";
 
 interface AuthState {
   loading: boolean;
   isAuthenticated: boolean;
   user: any;
   errorMessage: string;
+  signUpLoading: boolean;
+  signUpErrorMessage: string;
+  successSignUpUser: any;
 }
 
 const initialState: AuthState = {
@@ -15,12 +17,21 @@ const initialState: AuthState = {
   isAuthenticated: false,
   user: null,
   errorMessage: "",
+  signUpLoading: false,
+  signUpErrorMessage: "",
+  successSignUpUser: null,
 };
 
 export const loginAction = createAsyncThunk(
   "auth/login",
   async (params: ILoginUser, { rejectWithValue }) =>
     await login(params, { rejectWithValue })
+);
+
+export const signUpAction = createAsyncThunk(
+  "auth/signup",
+  async (params: ISingupUser, { rejectWithValue }) =>
+    await signup(params, { rejectWithValue })
 );
 
 const authSlice = createSlice({
@@ -49,6 +60,17 @@ const authSlice = createSlice({
       state.loading = false;
       state.isAuthenticated = false;
       state.user = null;
+      state.errorMessage = action.payload.response.data;
+    },
+    [signUpAction.pending.type]: (state) => {
+      state.signUpLoading = true;
+    },
+    [signUpAction.fulfilled.type]: (state, action) => {
+      state.signUpLoading = false;
+      state.successSignUpUser = action.payload.data;
+    },
+    [signUpAction.rejected.type]: (state, action) => {
+      state.signUpLoading = false;
       state.errorMessage = action.payload.response.data;
     },
   },

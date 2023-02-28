@@ -1,8 +1,8 @@
 import { message } from "antd";
 import { AxiosError } from "axios";
 import { useCallback } from "react";
-import { ILoginUser } from "../models/user";
-import { loginAction, logoutAction } from "../redux/authSlice";
+import { ILoginUser, ISingupUser } from "../models/user";
+import { loginAction, logoutAction, signUpAction } from "../redux/authSlice";
 import { useAppDispatch } from "../redux/hooks";
 import { removeAuthHeader, setAuthHeader } from "../util/httpClient";
 
@@ -19,12 +19,13 @@ const useAuth = () => {
           localStorage.setItem("user", JSON.stringify(data));
         }
       } catch (error: any) {
+        message.destroy();
         message.error(error.response.data);
       }
     },
     [dispatch]
   );
-  
+
   const logout = useCallback(() => {
     dispatch(logoutAction());
     removeAuthHeader();
@@ -32,7 +33,21 @@ const useAuth = () => {
     localStorage.removeItem("user");
   }, [dispatch]);
 
-  return { login, logout };
+  const signup = useCallback(
+    async (values: ISingupUser) => {
+      try {
+        const { status } = await dispatch(signUpAction(values)).unwrap();
+        if (status === 200) {
+        }
+      } catch (error: any) {
+        message.destroy();
+        message.error(error.response.data);
+      }
+    },
+    [dispatch]
+  );
+
+  return { login, logout, signup };
 };
 
 export default useAuth;

@@ -19,14 +19,14 @@ const LoginForm = () => {
   };
 
   return (
-    <Styled.LoginContainer>
-      <div className="login-wrap">
+    <Styled.FormContainer>
+      <div className="form-wrap">
         <div className="account-area">
           <div className="account-header">
-            <p className="hello">Hello</p>
-            <p className="welcome-back">Welcome Back</p>
+            <p className="header-line-1">Hello</p>
+            <p className="header-line-2">Welcome Back</p>
           </div>
-          <div className="login-form">
+          <div className="form-main">
             <Form form={form} layout="vertical" onFinish={onLogin}>
               <Form.Item
                 name="taiKhoan"
@@ -72,16 +72,16 @@ const LoginForm = () => {
               </div>
             </Form>
           </div>
-          <div className="signup">
+          <div className="form-footer">
             Don't have an account?
-            <span className="signup-now" onClick={() => navigate("/signup")}>
+            <span className="link" onClick={() => navigate("/signup")}>
               {" "}
               Sign up now
             </span>
           </div>
         </div>
       </div>
-    </Styled.LoginContainer>
+    </Styled.FormContainer>
   );
 };
 

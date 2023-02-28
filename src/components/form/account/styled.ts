@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.div`
+export const FormContainer = styled.div`
   width: 1170px;
   height: 100vh;
   margin: auto;
   padding: 0 15px;
-  .login-wrap {
-    padding: 120px 0;
+  .form-wrap {
+    padding: 60px 0;
   }
   .account-area {
     width: 100%;
@@ -17,25 +17,32 @@ export const LoginContainer = styled.div`
     box-shadow: 0px 0px 29.4px 0.6px rgb(0 0 0 / 50%);
     .account-header {
       margin-bottom: 37px;
-      .hello {
+      .header-line-1 {
         text-align: center;
         font-size: 24px;
         margin-bottom: 25px;
         color: #31d7a9;
         text-transform: uppercase;
         letter-spacing: 1px;
+        @media (max-width: 480px) {
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
       }
-      .welcome-back {
+      .header-line-2 {
         font-size: 40px;
         color: #fff;
         text-transform: uppercase;
         text-align: center;
         font-weight: 700;
         letter-spacing: 2px;
+        @media (max-width: 480px) {
+          font-size: 24px;
+        }
       }
     }
   }
-  .login-form {
+  .form-main {
     .ant-form-item-label label {
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.7);
@@ -59,12 +66,30 @@ export const LoginContainer = styled.div`
       margin-bottom: 22px;
     }
   }
-  .signup {
+  .form-footer {
     text-align: center;
     color: #fff;
-    .signup-now {
+    .link {
       cursor: pointer;
       color: #31d7a9;
+    }
+  }
+  @media (max-width: 1280px) {
+    width: 800px;
+  }
+  @media (max-width: 768px) {
+    width: 550px;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 0;
+    .form-wrap {
+      padding: 0;
+      height: 100vh;
+    }
+    .account-area {
+      padding: 30px 20px;
+      height: 100%;
     }
   }
 `;
