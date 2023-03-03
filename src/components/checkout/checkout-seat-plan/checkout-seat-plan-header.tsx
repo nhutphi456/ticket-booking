@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../../redux/hooks";
 import * as Styled from "./styled";
 
@@ -15,7 +16,9 @@ const CheckoutSeatPlanHeader = () => {
   return (
     <Styled.SeatPlanHeader>
       <div className="logo-container">
-        <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
+        <Link to="/">
+          <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
+        </Link>
       </div>
       <div className="profile">
         <Styled.ProfileImage

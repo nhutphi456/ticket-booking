@@ -18,7 +18,7 @@ export const SeatPlan = styled.div`
     margin: 0 auto;
     @media (max-width: 480px) {
       width: 90%;
-      padding: 15px 10px;
+      padding: 15px 0px;
     }
   }
   .seat-container {
@@ -31,7 +31,6 @@ export const SeatPlan = styled.div`
   .seats {
     width: 85%;
     margin: 0 auto;
-    overflow-x: scroll;
     .screen {
       text-align: center;
       position: relative;
@@ -71,6 +70,9 @@ export const SeatPlan = styled.div`
     .counter {
       font-size: 36px;
       font-weight: 600;
+      @media (max-width: 480px) {
+        font-size: 24px;
+      }
     }
   }
   .re-book {
@@ -81,6 +83,30 @@ export const SeatPlan = styled.div`
     height: 100vh;
     background-color: #000;
     z-index: 999;
+  }
+  .seat-note {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 15px;
+    .note-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        display: flex;
+        width: 30px;
+      }
+      p {
+        margin-top: 5px;
+      }
+      @media (max-width: 480px) {
+        p {
+          font-size: 12px;
+        }
+      }
+    }
   }
 
   @media (max-width: 1280px) {
@@ -111,12 +137,19 @@ export const SeatPlanHeader = styled.div`
     justify-content: center;
     align-items: center;
     img {
-      transform: scale(0.8);
+      @media (max-width: 480px) {
+        width: 100px;
+      }
     }
   }
   .profile {
     display: flex;
     align-items: center;
+    @media (max-width: 480px) {
+      .username {
+        font-size: 12px;
+      }
+    }
   }
   @media (max-width: 1280px) {
     width: 72%;
@@ -126,6 +159,9 @@ export const SeatPlanHeader = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
+  }
+  @media (max-width: 480px) {
+    padding: 10px 15px;
   }
 `;
 
@@ -164,6 +200,9 @@ export const Seats = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    @media (max-width: 480px) {
+      width: auto;
+    }
   }
   .row-name {
     display: flex;
@@ -177,10 +216,6 @@ export const Seats = styled.div`
       font-size: 20px;
       font-weight: 600;
     }
-
-    @media (max-width: 1280px) {
-      // left: -30px;
-    }
   }
   .seat-row {
     display: flex;
@@ -190,33 +225,10 @@ export const Seats = styled.div`
       gap: 3px;
     }
   }
-  .seat-note {
-    display: flex;
-    justify-content: center;
-    gap: 10%;
-    margin-top: 15px;
-    .note-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      img {
-        display: flex;
-        width: 30px;
-      }
-      p {
-        margin-top: 5px;
-      }
-      @media (max-width: 480px) {
-        p {
-          font-size: 12px;
-        }
-      }
-    }
-  }
 
   @media (max-width: 480px) {
     gap: 5px;
+    overflow-x: scroll;
   }
 `;
 
@@ -267,4 +279,8 @@ export const ProfileImage = styled.div<{ bgUrl: string }>`
   margin-right: 5px;
   background: url(${(props) => props.bgUrl}) no-repeat center;
   background-size: cover;
+  @media (max-width: 480px) {
+    width: 35px;
+    height: 35px;
+  }
 `;

@@ -5,6 +5,7 @@ import CheckoutFooterMobile from "../components/checkout/checkout-footer-mobile"
 import CheckOutSeatPlan from "../components/checkout/checkout-seat-plan";
 import CheckOutSideBar from "../components/checkout/checkout-sidebar";
 import Loading from "../components/loading";
+import Layer from "../components/page-layer";
 import useMobile from "../hooks/useMobile";
 import { getBookingAction, resetSeat } from "../redux/bookingSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
@@ -36,6 +37,7 @@ const CheckOut = () => {
       <CheckOutSeatPlan />
       <CheckOutSideBar />
       {isMobile && <CheckoutFooterMobile />}
+      <Layer/>
     </StyledCheckOut>
   );
 };

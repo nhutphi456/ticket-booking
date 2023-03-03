@@ -35,29 +35,6 @@ const Seats = ({ seats }: Props) => {
               </div>
             </div>
           ))}
-        <div className="seat-note">
-          <div className="note-item">
-            <img
-              src={process.env.PUBLIC_URL + "/images/seat-available.png"}
-              alt="seat-available"
-            />
-            <p>Ghế có sẵn</p>
-          </div>
-          <div className="note-item">
-            <img
-              src={process.env.PUBLIC_URL + "/images/seat-booking.png"}
-              alt="seat-booking"
-            />
-            <p>Ghế đang chọn</p>
-          </div>
-          <div className="note-item">
-            <img
-              src={process.env.PUBLIC_URL + "/images/seat-booked.png"}
-              alt="seat-booked"
-            />
-            <p>Ghế đã mua</p>
-          </div>
-        </div>
       </Styled.Seats>
     </>
   );
