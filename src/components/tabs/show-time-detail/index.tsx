@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useMobile from "../../../hooks/useMobile";
 import { IShowTimeDetail } from "../../../models/movie";
 import { CustomTabs } from "../styled";
@@ -9,6 +10,16 @@ interface Props {
 }
 const ShowTimeDetailTab = ({ showTimes }: Props) => {
   const isMobile = useMobile();
+  const haveNoShow = showTimes.every(
+    (showTime: any) => showTime.rap.length === 0
+  );
+  if (haveNoShow)
+    return (
+      <div className="no-show-time">
+        Chưa có lịch chiếu cho phim này.{" "}
+        <Link to="/">Về trang chủ</Link>
+      </div>
+    );
   return (
     <CustomTabs
       defaultActiveKey="1"

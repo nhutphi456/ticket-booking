@@ -34,7 +34,12 @@ const Header = () => {
       <div className="container">
         <div className="header-wrapper">
           <div className="logo-container">
-            <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" />
+            <Link to="/">
+              <img
+                src={process.env.PUBLIC_URL + "/images/logo.png"}
+                alt="logo"
+              />
+            </Link>
           </div>
           <div className="header-right">
             <div className="header-buttons">

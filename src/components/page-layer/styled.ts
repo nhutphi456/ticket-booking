@@ -9,7 +9,7 @@ export const Layer = styled.div`
   background-color: #001232;
   z-index: 9999;
   animation-name: fadeOut;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   @keyframes fadeOut {
     0% {

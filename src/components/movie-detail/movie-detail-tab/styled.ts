@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const MovieDetailTab = styled.div`
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   .ant-tabs-tab {
     color: #fff;
     text-transform: uppercase;
@@ -22,6 +23,10 @@ export const MovieDetailTab = styled.div`
   .ant-tabs-ink-bar {
     height: 3px !important;
     background: #31d7a9;
+  }
+  .no-show-time {
+    font-size: 18px;
+    color: #fff;
   }
 `;
 

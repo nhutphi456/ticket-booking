@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useState } from "react";
+import Footer from "../components/footer";
 import HeaderMobile from "../components/header/header-mobile";
 import Layer from "../components/page-layer";
 import useMobile from "../hooks/useMobile";
@@ -18,6 +19,7 @@ const MainLayout = ({ children }: Props) => {
         {children}
         <Layer />
       </Styled.MainContainer>
+      <Footer />
     </React.Fragment>
   );
 };
