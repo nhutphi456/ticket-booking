@@ -72,7 +72,7 @@ const MovieDetailThumb = ({ movie }: Props) => {
             </div>
             <div className="book-btn-container">
               <a href="#showTime">
-                <Button className="book-btn">Book Tickets</Button>
+                <Button className="book-btn">Đặt vé ngay</Button>
               </a>
             </div>
           </div>

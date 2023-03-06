@@ -145,6 +145,9 @@ export const SeatPlanHeader = styled.div`
   .profile {
     display: flex;
     align-items: center;
+    .username {
+      color: #fff;
+    }
     @media (max-width: 480px) {
       .username {
         font-size: 12px;

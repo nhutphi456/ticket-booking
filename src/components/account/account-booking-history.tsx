@@ -75,7 +75,7 @@ const BookingHistory = () => {
           columns={columns}
           bordered
           size={isMobile ? "small" : "middle"}
-          scroll={{ x: 1200 }}
+          scroll={{ x: 1000 }}
         />
       </div>
     </Styled.BookingHistory>

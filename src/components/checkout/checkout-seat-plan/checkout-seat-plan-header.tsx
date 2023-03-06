@@ -24,7 +24,11 @@ const CheckoutSeatPlanHeader = () => {
         <Styled.ProfileImage
           bgUrl={process.env.PUBLIC_URL + "/images/profile-image.jpg"}
         />
-        <span className="username">{user && user.taiKhoan}</span>
+        {user && (
+          <Link to={`/account/${user.taiKhoan}`}>
+            <span className="username">{user.taiKhoan}</span>
+          </Link>
+        )}
       </div>
     </Styled.SeatPlanHeader>
   );

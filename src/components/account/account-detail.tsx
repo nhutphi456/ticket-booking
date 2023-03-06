@@ -57,7 +57,7 @@ const AccountDetail = () => {
       <div className="form-container">
         <Form form={form} onFinish={onFinish} layout="vertical">
           <Row gutter={[40, 40]} align="middle">
-            <Col span={8} xs={24}>
+            <Col sm={8} xs={24}>
               <Form.Item
                 label="Tài khoản"
                 name="taiKhoan"
@@ -71,7 +71,7 @@ const AccountDetail = () => {
                 <Input placeholder="Tài khoản" disabled />
               </Form.Item>
             </Col>
-            <Col span={8} xs={24}>
+            <Col sm={8} xs={24}>
               <Form.Item
                 label="Mật khẩu"
                 name="matKhau"
@@ -85,7 +85,7 @@ const AccountDetail = () => {
                 <Input.Password placeholder="Mật khẩu" />
               </Form.Item>
             </Col>
-            <Col span={8} xs={24}>
+            <Col sm={8} xs={24}>
               <Form.Item
               label="Họ tên"
                 name="hoTen"
@@ -101,7 +101,7 @@ const AccountDetail = () => {
             </Col>
           </Row>
           <Row gutter={[40, 40]} align="middle">
-            <Col span={8} xs={24}>
+            <Col sm={8} xs={24}>
               <Form.Item
               label="Email"
                 name="email"
@@ -115,7 +115,7 @@ const AccountDetail = () => {
                 <Input placeholder="Email" />
               </Form.Item>
             </Col>
-            <Col span={8} xs={24}>
+            <Col sm={8} xs={24}>
               <Form.Item
               label="Số điện thoại"
                 name="soDT"
@@ -129,7 +129,7 @@ const AccountDetail = () => {
                 <Input placeholder="Số điện thoại" />
               </Form.Item>
             </Col>
-            <Col span={8} xs={24}>
+            <Col sm={8} xs={24}>
               <Button htmlType="submit" loading={updateLoading}>
                 Cập nhật
               </Button>

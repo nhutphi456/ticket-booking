@@ -1,3 +1,4 @@
+import { Table } from "antd";
 import styled from "styled-components";
 
 export const Account = styled.div`
@@ -67,6 +68,13 @@ export const Account = styled.div`
     border: none;
     box-shadow: none;
     border-bottom: 1px solid #23334f;
+  }
+
+  .total-expense {
+    font-size: 41px;
+    font-weight: 600;
+    line-height: 60px;
+    color: #31d7a9;
   }
 
   @media (max-width: 480px) {

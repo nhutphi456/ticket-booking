@@ -122,7 +122,7 @@ export const MoviePoster = styled.div<{ bgUrl: string }>`
 
 export const BookSection = styled.div`
   position: relative;
-  padding: 47px 0;
+  padding: 35px 0;
   border-top: 1px solid #17305f;
   border-bottom: 1px solid #17305f;
   background-color: #032055;
