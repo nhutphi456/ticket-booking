@@ -3,6 +3,7 @@ import authReducer from "./authSlice";
 import movieReducer from "./movieSlice";
 import theaterReducer from "./theaterSlice";
 import bookingReducer from "./bookingSlice";
+import accountReducer from "./accountSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     movie: movieReducer,
     theater: theaterReducer,
     booking: bookingReducer,
+    account: accountReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

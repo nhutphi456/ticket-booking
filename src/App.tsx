@@ -24,7 +24,7 @@ const router = createBrowserRouter(
       <Route element={<RequireAuth />}>
         <Route path="/test" element={<TestPage />} />
         <Route path="/checkout/:showId" element={<CheckOut />} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/account/:accountName" element={<Account />} />
       </Route>
     </Route>
   )

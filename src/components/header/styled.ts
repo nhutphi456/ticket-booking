@@ -32,6 +32,9 @@ const Header = styled.div`
     }
     .welcome-text {
       color: #fff;
+      .username {
+        color: #fff;
+      }
     }
   }
   

@@ -18,7 +18,7 @@ const HeaderMobile = () => {
         {
           key: "1",
           label: (
-            <Link to="/account">
+            <Link to={`/account/${user.taiKhoan}`}>
               <span className="dropdown-menu-item">
                 Tài khoản: {user && user.hoTen}
               </span>

@@ -17,7 +17,7 @@ const useSeats = (seats: any[]) => {
     });
     setSeatList(formattedSeatList)
 
-    console.log("formattedSeatList", formattedSeatList);
+    // console.log("formattedSeatList", formattedSeatList);
   }, [seats]);
 
   return seatList;
