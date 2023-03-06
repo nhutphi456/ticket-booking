@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { IBookingHistory } from "../../models/account";
 import { useAppSelector } from "../../redux/hooks";
 import { formatAmount } from "../../util/formatAmount";
@@ -10,16 +10,20 @@ const AccountMain = () => {
   const {
     account: { data },
   } = useAppSelector((state) => state);
-  const totalExpense = data?.thongTinDatVe.reduce(
-    (acc, ticket: IBookingHistory) => acc + ticket.giaVe,
-    0
+  const totalExpense = useMemo(
+    () =>
+      data?.thongTinDatVe.reduce(
+        (acc, ticket: IBookingHistory) => acc + ticket.giaVe,
+        0
+      ),
+    [data]
   );
 
   return (
     <Styled.Account className="container">
       <div className="card">
         <h5 className="title">Tổng chi tiêu</h5>
-        <p className="total-expense">{formatAmount(totalExpense)} đ</p>
+        <p className="total-expense">{totalExpense && formatAmount(totalExpense)} đ</p>
       </div>
       <AccountDetail />
       <BookingHistory />
