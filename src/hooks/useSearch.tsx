@@ -34,7 +34,7 @@ const useSearch = () => {
             });
           });
         });
-        console.log("complexes", complexes);
+        // console.log("complexes", complexes);
         setTheaters(complexes);
         setDates([]);
         setPremieres([]);

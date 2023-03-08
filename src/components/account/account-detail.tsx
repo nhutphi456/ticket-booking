@@ -37,7 +37,6 @@ const AccountDetail = () => {
   }, [updateSuccessData, updateLoading]);
 
   const onFinish = (values: FormValue) => {
-    console.log("value", values);
     const { taiKhoan, matKhau, soDT, email, hoTen } = values;
     const params = {
       taiKhoan,

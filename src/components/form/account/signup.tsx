@@ -22,7 +22,6 @@ const SignUpForm = () => {
   const navigate = useNavigate();
 
   const onSignUp = async (values: ISignupFormValue) => {
-    console.log("signup", values);
     const { taiKhoan, matKhau, email } = values;
     const params = {
       taiKhoan,

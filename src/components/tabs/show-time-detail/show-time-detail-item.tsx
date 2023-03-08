@@ -19,7 +19,7 @@ const ShowTimeDetailItem = ({ showTimeByDate }: Props) => {
       }
     });
 
-    console.log("complexes", availableComplexes);
+    // console.log("complexes", availableComplexes);
     return availableComplexes.map((ac: any, index: number) => {
       const [cinemaName, branch] = ac.tenCumRap.split("-");
 

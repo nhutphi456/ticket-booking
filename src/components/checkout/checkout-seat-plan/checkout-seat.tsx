@@ -30,7 +30,7 @@ const Seat = ({ rowName, rowOrder, seat }: Props) => {
       return message.warning(`Bạn không thể chọn quá ${SEAT_LIMIT} ghế`);
     }
     const formattedSeat = { ...seat, displaySeatId };
-    console.log("seat", seat);
+    // console.log("seat", seat);
     if (selectedSeatIds.includes(seat.maGhe)) {
       dispatch(removeSeat(formattedSeat));
       return;

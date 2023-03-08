@@ -32,7 +32,7 @@ const useBooking = () => {
         message.destroy();
       }
     } catch (error) {}
-    console.log("params", params);
+    // console.log("params", params);
   };
 
   return { onFinishBooking, bookLoading, isSuccessful };
