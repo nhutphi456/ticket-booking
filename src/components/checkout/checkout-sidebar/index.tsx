@@ -1,6 +1,5 @@
 import { Button } from "antd";
-import moment from "moment";
-import React, { useState } from "react";
+import { useState } from "react";
 import useBooking from "../../../hooks/useBooking";
 import { useAppSelector } from "../../../redux/hooks";
 import { formatAmount } from "../../../util/formatAmount";
@@ -60,7 +59,7 @@ const CheckOutSideBar = () => {
               className={`option ${activePaymentOption === 1 && "active"}`}
               onClick={() => setActivePaymentOption(1)}
             >
-              <a href="#">
+              <a href="#0">
                 <img
                   src={process.env.PUBLIC_URL + "/images/card.png"}
                   alt="card"
@@ -72,7 +71,7 @@ const CheckOutSideBar = () => {
               className={`option ${activePaymentOption === 2 && "active"}`}
               onClick={() => setActivePaymentOption(2)}
             >
-              <a href="#">
+              <a href="#0">
                 <img
                   src={process.env.PUBLIC_URL + "/images/card.png"}
                   alt="card"
@@ -84,7 +83,7 @@ const CheckOutSideBar = () => {
               className={`option ${activePaymentOption === 3 && "active"}`}
               onClick={() => setActivePaymentOption(3)}
             >
-              <a href="#">
+              <a href="#0">
                 <img
                   src={process.env.PUBLIC_URL + "/images/paypal.png"}
                   alt="paypal"

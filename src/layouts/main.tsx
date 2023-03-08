@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import Footer from "../components/footer";
 import HeaderMobile from "../components/header/header-mobile";
 import Layer from "../components/page-layer";

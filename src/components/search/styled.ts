@@ -82,6 +82,9 @@ const Search = styled.div`
         height: auto;
         border-radius: 0;
       }
+      &:disabled:hover {
+        color: rgba(0, 0, 0, 0.25)!important;
+      }
     }
   }
   .search-groups {

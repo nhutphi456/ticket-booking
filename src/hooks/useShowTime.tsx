@@ -57,11 +57,11 @@ const useShowTime = () => {
           });
         });
       });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     getTheater();
-  }, []);
+  }, [getTheater]);
 
   return { theaters, loading };
 };

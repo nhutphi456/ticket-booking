@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import withAuthSync from "../components/authentication/withAuthSync";
 import Banner from "../components/banner";
 import Loading from "../components/loading";
 import MovieList from "../components/movie";
 import SearchTab from "../components/search";
 import ShowTime from "../components/tabs/show-time";
-import useShowTime from "../hooks/useShowTime";
 import MainLayout from "../layouts/main";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { getMovieListAction } from "../redux/movieSlice";
@@ -18,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getMovieListAction());
-  }, []);
+  }, [dispatch]);
 
   if (loading) return <Loading />;
   return (

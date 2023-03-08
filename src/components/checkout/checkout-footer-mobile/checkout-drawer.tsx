@@ -55,7 +55,7 @@ const CheckoutDrawer = ({...props}: DrawerProps) => {
               className={`option ${activePaymentOption === 1 && "active"}`}
               onClick={() => setActivePaymentOption(1)}
             >
-              <a href="#">
+              <a href="#0">
                 <img
                   src={process.env.PUBLIC_URL + "/images/card.png"}
                   alt="card"
@@ -67,7 +67,7 @@ const CheckoutDrawer = ({...props}: DrawerProps) => {
               className={`option ${activePaymentOption === 2 && "active"}`}
               onClick={() => setActivePaymentOption(2)}
             >
-              <a href="#">
+              <a href="#0">
                 <img
                   src={process.env.PUBLIC_URL + "/images/card.png"}
                   alt="card"
@@ -79,7 +79,7 @@ const CheckoutDrawer = ({...props}: DrawerProps) => {
               className={`option ${activePaymentOption === 3 && "active"}`}
               onClick={() => setActivePaymentOption(3)}
             >
-              <a href="#">
+              <a href="#0">
                 <img
                   src={process.env.PUBLIC_URL + "/images/paypal.png"}
                   alt="paypal"

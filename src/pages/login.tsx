@@ -14,7 +14,7 @@ const LoginPage = () => {
     if (isAuthenticated) {
       navigate("/");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
   
   return (
     <AccountLayout>

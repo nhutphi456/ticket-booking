@@ -2,7 +2,7 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Carousel, Col, Row } from "antd";
 import _ from "lodash";
 import useMobile from "../../hooks/useMobile";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useAppSelector } from "../../redux/hooks";
 import MovieItem from "./movie-item";
 import * as Styled from "./styled";
 
@@ -25,7 +25,6 @@ const MovieList = () => {
   const {
     movie: { data },
   } = useAppSelector((state) => state);
-  const dispatch = useAppDispatch();
   const isMobile = useMobile();
 
   // useEffect(() => {

@@ -18,7 +18,7 @@ const ShowTime = () => {
             return {
               label: (
                 <div className="logo-container">
-                  <img src={theater.logo} width={50} height={50} />
+                  <img src={theater.logo} width={50} height={50} alt={`theater-${key}`}/>
                 </div>
               ),
               key: key + 1,

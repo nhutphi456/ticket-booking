@@ -1,7 +1,6 @@
-import React from "react";
-import { Button, Modal } from "antd";
-import * as Styled from "./styled";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import * as Styled from "./styled";
 
 interface Props {
   isOpen: boolean;

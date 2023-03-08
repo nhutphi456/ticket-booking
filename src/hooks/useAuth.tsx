@@ -1,5 +1,4 @@
 import { message } from "antd";
-import { AxiosError } from "axios";
 import { useCallback } from "react";
 import { ILoginUser, ISingupUser } from "../models/user";
 import { loginAction, logoutAction, signUpAction } from "../redux/authSlice";

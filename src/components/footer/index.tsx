@@ -1,14 +1,8 @@
 import {
-  faFacebook,
-  faTwitter,
-  faPinterest,
-  faGoogle,
-  faInstagram,
-  faFacebookF,
+  faFacebookF, faGoogle,
+  faInstagram, faPinterest, faTwitter
 } from "@fortawesome/free-brands-svg-icons";
-import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { Link } from "react-router-dom";
 import * as Styled from "./styled";
 

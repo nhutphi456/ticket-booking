@@ -1,7 +1,6 @@
 import { Button } from "antd";
-import withAuthSync from "../components/authentication/withAuthSync";
-import MainLayout from "../layouts/main";
 import { redirect } from "react-router-dom";
+import MainLayout from "../layouts/main";
 const TestPage = () => {
   return (
     <MainLayout>

@@ -13,7 +13,7 @@ const RootLayout = () => {
       dispatch(syncLogin(user));
       setAuthHeader(user.accessToken)
     }
-  }, []);
+  }, [dispatch]);
   
   return <Outlet />;
 };

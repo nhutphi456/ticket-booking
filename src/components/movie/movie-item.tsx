@@ -1,20 +1,19 @@
-import React from "react";
-import { Link } from 'react-router-dom'
-import { IMovieItem } from "../../models/movie";
 import { PlayCircleFilled } from "@ant-design/icons";
+import { Link } from 'react-router-dom';
+import { IMovieItem } from "../../models/movie";
 import * as Styled from "./styled";
 
 interface Props {
   movie: IMovieItem;
 }
 const MovieItem = ({ movie }: Props) => {
-  const { tenPhim, hinhAnh, biDanh, trailer, danhGia, maPhim } = movie;
+  const { tenPhim, hinhAnh, trailer, danhGia, maPhim } = movie;
   return (
     <Styled.MovieItem>
       <Styled.MovieThumb className="movie-thumb" image={hinhAnh}>
         <div className="overlay">
           <div className="icon-container">
-            <a href={trailer} target="_blank">
+            <a href={trailer} target="_blank" rel="noreferrer"> 
               <PlayCircleFilled className="play-icon" />
             </a>
           </div>

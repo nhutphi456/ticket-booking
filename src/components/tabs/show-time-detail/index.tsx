@@ -1,7 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import useMobile from "../../../hooks/useMobile";
-import { IShowTimeDetail } from "../../../models/movie";
 import { CustomTabs } from "../styled";
 import ShowtimeDetailDateTab from "./show-time-detail-date-tab";
 
@@ -25,11 +23,11 @@ const ShowTimeDetailTab = ({ showTimes }: Props) => {
       defaultActiveKey="1"
       tabPosition={!isMobile ? "left" : "top"}
       items={showTimes.map((st: any, key: number) => {
-        if (!st.rap.length) return;
+        if (!st.rap.length) return null;
         return {
           label: (
             <div className="logo-container">
-              <img src={st.logo} width={50} height={50} />
+              <img src={st.logo} width={50} height={50} alt={`theater-${key}`} />
             </div>
           ),
           key: key + 1,

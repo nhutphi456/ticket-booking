@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -31,7 +32,20 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>BOLETO - Online Ticket Booking</title>
+        <link
+          rel="shortcut icon"
+          type="image/png"
+          href="https://pixner.net/boleto/demo/assets/images/favicon.png"
+        />
+      </Helmet>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

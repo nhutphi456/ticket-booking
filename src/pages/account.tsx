@@ -20,7 +20,7 @@ const Account = () => {
         taiKhoan: accountName,
       })
     );
-  }, [accountName]);
+  }, [accountName, dispatch]);
 
   if (loading) return <Loading />;
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { IShowTimeDetail } from "../models/movie";
 import { theaterApi } from "../services/theater";
 import { formatShowTimes } from "../util/formatShowTimes";

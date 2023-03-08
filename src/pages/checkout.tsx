@@ -29,7 +29,7 @@ const CheckOut = () => {
     return () => {
       dispatch(resetSeat());
     };
-  }, [showId]);
+  }, [showId, dispatch]);
 
   if (loading) return <Loading />;
   return (

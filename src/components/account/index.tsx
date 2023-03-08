@@ -23,7 +23,9 @@ const AccountMain = () => {
     <Styled.Account className="container">
       <div className="card">
         <h5 className="title">Tổng chi tiêu</h5>
-        <p className="total-expense">{totalExpense && formatAmount(totalExpense)} đ</p>
+        <p className="total-expense">
+          {totalExpense && formatAmount(totalExpense)} đ
+        </p>
       </div>
       <AccountDetail />
       <BookingHistory />
