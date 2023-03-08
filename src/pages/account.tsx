@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AccountMain from "../components/account";
 import Loading from "../components/loading";
@@ -22,11 +22,13 @@ const Account = () => {
     );
   }, [accountName, dispatch]);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading/>;
   return (
-    <MainLayout>
-      <AccountMain />
-    </MainLayout>
+    <Suspense fallback={<Loading />}>
+      <MainLayout>
+        <AccountMain />
+      </MainLayout>
+    </Suspense>
   );
 };
 
