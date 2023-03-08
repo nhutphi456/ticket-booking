@@ -36,6 +36,14 @@ export const MovieList = styled.div`
     bottom: -30px;
   }
 
+  .title {
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #31d7a9;
+  }
+
   @media (max-width: 768px) {
     padding: 30px 0px;
   }

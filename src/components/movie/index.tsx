@@ -38,6 +38,7 @@ const MovieList = () => {
   // if(loading) return <div>Loading...</div>
   return (
     <Styled.MovieList className="container">
+      <h2 className="title">Now Showing</h2>
       <Carousel draggable arrows {...settings}>
         {_.chunk(data, !isMobile ? 8 : 4).map((m, idx) => {
           return (

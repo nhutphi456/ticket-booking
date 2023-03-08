@@ -2,6 +2,7 @@ import useMobile from "../../../hooks/useMobile";
 import useShowTime from "../../../hooks/useShowTime";
 import { ITheater } from "../../../models/theater";
 import { CustomTabs } from "../styled";
+import { TabsContainer } from "./styled";
 import CinemaTabs from "./show-time-cinema-tab";
 
 const ShowTime = () => {
@@ -10,7 +11,8 @@ const ShowTime = () => {
 
   if (loading) return <div>Loading...</div>;
   return (
-    <div className="container">
+    <TabsContainer className="container">
+      <h2 className="title">Book Now</h2>
       <div style={{ padding: "20px 0" }}>
         <CustomTabs
           defaultActiveKey="1"
@@ -18,7 +20,12 @@ const ShowTime = () => {
             return {
               label: (
                 <div className="logo-container">
-                  <img src={theater.logo} width={50} height={50} alt={`theater-${key}`}/>
+                  <img
+                    src={theater.logo}
+                    width={50}
+                    height={50}
+                    alt={`theater-${key}`}
+                  />
                 </div>
               ),
               key: key + 1,
@@ -34,7 +41,7 @@ const ShowTime = () => {
           tabPosition={!isMobile ? "left" : "top"}
         />
       </div>
-    </div>
+    </TabsContainer>
   );
 };
 

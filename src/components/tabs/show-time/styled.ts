@@ -1,7 +1,15 @@
 import { Collapse, Tabs } from "antd";
 import styled from "styled-components";
 
-export const TheaterTabs = styled(Tabs)``;
+export const TabsContainer = styled.div`
+  .title {
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #31d7a9;
+  }
+`;
 export const CinemaTabs = styled(Tabs)`
   max-height: 705px;
   // overflow: hidden scroll;
